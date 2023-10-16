@@ -20,7 +20,7 @@
         var config = {
             fps: 10,
             qrbox: {width: 250, height: 250},
-            rememberLastUsedCamera: false,
+            rememberLastUsedCamera: true,
             supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
         };
 
@@ -42,7 +42,7 @@
         // https://github.com/mebjas/html5-qrcode/
 
         function onScanSuccess(decodedText, decodedResult) {
-            html5QrcodeScanner.pause();
+            html5QrcodeScanner.clear();
             readerContainer.removeAttribute('data-active');
             document.getElementById('dText').innerText = decodedText;
         }
