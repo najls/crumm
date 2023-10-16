@@ -9,24 +9,51 @@
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
     <style>
-        #reader {
-            border: 1px solid red;
+        :root {
+            --gap: 1rem;
         }
+
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        header { padding: var(--gap); }
+
+        main {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: var(--gap);
+        }
+
+        body, main { gap: var(--gap); }
+
+        #card {
+            background-color: blueviolet;
+            border: var(--gap) solid white;
+            border-radius: 1.5rem;
+            flex: 1;
+        }
+
+        .inactive { display: none; }
     </style>
 </head>
 <body>
-    <h1>Hello</h1>
-    <p>Test 1</p>
-    <h2>Reader result</h2>
-    <p id="dText">None</p>
-    <p id="dFail">---</p>
-    <button id="renderReader">Scan code</button>
-    <div id="reader"></div>
+    <main>
+        <button id="renderReader">Scan code</button>
+        <div class="inactive" id="reader"></div>
+        <div id="card">?</div>
+    </main>
     <script>
         // https://github.com/mebjas/html5-qrcode/
         var config = {
             fps: 10,
-            qrbox: {width: 250, height: 250},
+            qrbox: { width: 250, height: 250 },
             rememberLastUsedCamera: true,
             supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
         };
@@ -35,30 +62,24 @@
         var readerContainer = document.getElementById('reader');
 
         document.getElementById('renderReader').addEventListener('click', async function() {
-            readerContainer.toggleAttribute('data-active');
+            readerContainer.classList.toggle('inactive');
 
-            if (reader.hasAttribute('data-active')) {
+            if (!readerContainer.classList.contains('inactive')) {
                 html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
                 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
             }
             else {
-                clearReader();
+                html5QrcodeScanner.clear();
             }
         });
 
         function onScanSuccess(decodedText, decodedResult) {
-            clearReader();
-            readerContainer.removeAttribute('data-active');
-            document.getElementById('dText').innerText = decodedText;
+            html5QrcodeScanner.clear();
+            readerContainer.classList.remove('inactive');
         }
 
         function onScanFailure(error) {
             // handle scan failure, usually better to ignore and keep scanning.
-        }
-
-        function clearReader() {
-            html5QrcodeScanner.clear();
-            readerContainer.removeAttribute('style');
         }
     </script>
 </body>
