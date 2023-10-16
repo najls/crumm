@@ -7,6 +7,12 @@
     <title>TP</title>
 
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+    <style>
+        #reader {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello</h1>
@@ -17,6 +23,7 @@
     <button id="renderReader">Scan code</button>
     <div id="reader"></div>
     <script>
+        // https://github.com/mebjas/html5-qrcode/
         var config = {
             fps: 10,
             qrbox: {width: 250, height: 250},
@@ -35,21 +42,23 @@
                 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
             }
             else {
-                onScanSuccess("user stop", undefined);
+                clearReader();
             }
         });
 
-        // https://github.com/mebjas/html5-qrcode/
-
         function onScanSuccess(decodedText, decodedResult) {
-            html5QrcodeScanner.clear();
             readerContainer.removeAttribute('data-active');
             document.getElementById('dText').innerText = decodedText;
+            clearReader();
         }
 
         function onScanFailure(error) {
             // handle scan failure, usually better to ignore and keep scanning.
-            document.getElementById('dFail').innerText = Fail;
+        }
+
+        function clearReader() {
+            html5QrcodeScanner.clear();
+            readerContainer.removeAttribute('style');
         }
     </script>
 </body>
