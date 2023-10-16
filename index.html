@@ -15,16 +15,15 @@
     <p id="dText">None</p>
     <p id="dResult">None</p>
 
-    <div id="reader" width="600px"></div>
+    <div id="reader"></div>
     <script>
         // https://github.com/mebjas/html5-qrcode/
 
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
-            html5QrcodeScanner.stop();
+            html5QrcodeScanner.pause();
             document.getElementById('dText').innerText = decodedText;
             document.getElementById('dResult').innerText = decodedResult;
-            html5QrcodeScanner.render();
         }
 
         function onScanFailure(error) {
