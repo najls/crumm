@@ -21,7 +21,7 @@
 
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
-            html5QrcodeScanner.clear();
+            html5QrcodeScanner.stop();
             document.getElementById('dText').innerText = decodedText;
             document.getElementById('dResult').innerText = decodedResult;
         }
