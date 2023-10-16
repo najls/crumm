@@ -14,13 +14,36 @@
     <h2>Reader result</h2>
     <p id="dText">None</p>
     <p id="dFail">---</p>
-
+    <button id="renderReader">Scan code</button>
     <div id="reader"></div>
     <script>
+        var config = {
+            fps: 10,
+            qrbox: {width: 250, height: 250},
+            rememberLastUsedCamera: false,
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+        };
+
+        var html5QrcodeScanner = undefined;
+        var readerContainer = document.getElementById('reader');
+
+        document.getElementById('renderReader').addEventListener('click', async function() {
+            readerContainer.toggleAttribute('data-active');
+
+            if (reader.hasAttribute('data-active')) {
+                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
+                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+            }
+            else {
+                onScanSuccess("user stop", undefined);
+            }
+        });
+
         // https://github.com/mebjas/html5-qrcode/
 
         function onScanSuccess(decodedText, decodedResult) {
-            html5QrcodeScanner.clear();
+            html5QrcodeScanner.pause();
+            readerContainer.removeAttribute('data-active');
             document.getElementById('dText').innerText = decodedText;
         }
 
@@ -28,17 +51,6 @@
             // handle scan failure, usually better to ignore and keep scanning.
             document.getElementById('dFail').innerText = Fail;
         }
-
-        let config = {
-            fps: 10,
-            qrbox: {width: 250, height: 250},
-            rememberLastUsedCamera: true,
-            // Only support camera scan type.
-            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
-        };
-
-        var html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
 </body>
 </html>
