@@ -11,20 +11,25 @@
 <body>
     <h1>Hello</h1>
     <p>Test</p>
-    <h2>Reader</h2>
+    <h2>Reader result</h2>
+    <p id="dText">None</p>
+    <p id="dResult">None</p>
+
     <div id="reader" width="600px"></div>
     <script>
         // https://github.com/mebjas/html5-qrcode/
 
         function onScanSuccess(decodedText, decodedResult) {
-        // handle the scanned code as you like, for example:
-        console.log(`Code matched = ${decodedText}`, decodedResult);
+            // handle the scanned code as you like, for example:
+            html5QrcodeScanner.clear();
+            document.getElementById('dText').innerText = decodedText;
+            document.getElementById('dResult').innerText = decodedResult;
         }
 
         function onScanFailure(error) {
-        // handle scan failure, usually better to ignore and keep scanning.
-        // for example:
-        console.warn(`Code scan error = ${error}`);
+            // handle scan failure, usually better to ignore and keep scanning.
+            // for example:
+            console.warn(`Code scan error = ${error}`);
         }
 
         let html5QrcodeScanner = new Html5QrcodeScanner(
