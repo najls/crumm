@@ -20,7 +20,7 @@
         // https://github.com/mebjas/html5-qrcode/
 
         function onScanSuccess(decodedText, decodedResult) {
-            html5QrcodeScanner.stop();
+            html5QrcodeScanner.clear();
             document.getElementById('dText').innerText = decodedText;
         }
 
@@ -29,7 +29,6 @@
             document.getElementById('dFail').innerText = Fail;
         }
 
-        
         let config = {
             fps: 10,
             qrbox: {width: 250, height: 250},
