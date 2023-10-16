@@ -24,6 +24,7 @@
             html5QrcodeScanner.stop();
             document.getElementById('dText').innerText = decodedText;
             document.getElementById('dResult').innerText = decodedResult;
+            html5QrcodeScanner.render();
         }
 
         function onScanFailure(error) {
