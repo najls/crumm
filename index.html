@@ -47,9 +47,9 @@
         });
 
         function onScanSuccess(decodedText, decodedResult) {
+            clearReader();
             readerContainer.removeAttribute('data-active');
             document.getElementById('dText').innerText = decodedText;
-            clearReader();
         }
 
         function onScanFailure(error) {
