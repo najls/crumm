@@ -10,10 +10,10 @@
 </head>
 <body>
     <h1>Hello</h1>
-    <p>Test</p>
+    <p>Test 1</p>
     <h2>Reader result</h2>
     <p id="dText">None</p>
-    <p id="dResult">None</p>
+    <p id="dFail">---</p>
 
     <div id="reader"></div>
     <script>
@@ -22,17 +22,23 @@
         function onScanSuccess(decodedText, decodedResult) {
             html5QrcodeScanner.stop();
             document.getElementById('dText').innerText = decodedText;
-            document.getElementById('dResult').innerText = decodedResult;
         }
 
         function onScanFailure(error) {
             // handle scan failure, usually better to ignore and keep scanning.
+            document.getElementById('dFail').innerText = Fail;
         }
 
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader",
-        { fps: 10, qrbox: {width: 250, height: 250} },
-        /* verbose= */ false);
+        
+        let config = {
+            fps: 10,
+            qrbox: {width: 250, height: 250},
+            rememberLastUsedCamera: true,
+            // Only support camera scan type.
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+        };
+
+        var html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
 </body>
