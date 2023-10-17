@@ -64,18 +64,18 @@
         document.getElementById('renderReader').addEventListener('click', async function() {
             readerContainer.classList.toggle('inactive');
 
-            if (!readerContainer.classList.contains('inactive')) {
-                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
-                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+            if (readerContainer.classList.contains('inactive')) {
+                html5QrcodeScanner.clear();
             }
             else {
-                html5QrcodeScanner.clear();
+                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
+                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
             }
         });
 
         function onScanSuccess(decodedText, decodedResult) {
             html5QrcodeScanner.clear();
-            readerContainer.classList.remove('inactive');
+            readerContainer.classList.add('inactive');
         }
 
         function onScanFailure(error) {
