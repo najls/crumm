@@ -32,13 +32,24 @@
         }
 
         body, main { gap: var(--gap); }
+        #renderReader {}
 
         #card {
             background-color: blueviolet;
             border: var(--gap) solid white;
             border-radius: 1.5rem;
+            display: flex;
             flex: 1;
+            flex-direction: column;
         }
+
+        #question {
+            flex: 1;
+            font-size: 2rem;
+            text-align: center;
+        }
+        #alternatives { flex: 1; }
+        #reveal {}
 
         .display-none { display: none; }
         #answer.revealed { color: red; }
@@ -58,7 +69,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) localStorage.clear();
 
-        // 
         var config = {
             fps: 10,
             qrbox: { width: 250, height: 250 },
@@ -70,13 +80,14 @@
         var readerContainer = document.getElementById('reader');
 
         document.getElementById('renderReader').addEventListener('click', async function() {
-            if (readerContainer.classList.toggle('display-none')) {
-                html5QrcodeScanner.clear();
-            }
-            else {
-                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
-                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-            }
+            // if (readerContainer.classList.toggle('display-none')) {
+            //     html5QrcodeScanner.clear();
+            // }
+            // else {
+            //     html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
+            //     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+            // }
+            renderQuestion('https://najls.github.io/crumm/test.json');
         });
 
         document.getElementById('reveal').addEventListener('click', function() {
