@@ -44,11 +44,11 @@
             "alternatives": [
                 { "text": "Wrong 1" },
                 { "text": "Wrong 2" },
-                { "text": "Wrong 4" }
-                { "text": "Wrong 5" }
+                { "text": "Wrong 4" },
+                { "text": "Wrong 5" },
                 { "text": "Correct" },
-                { "text": "Wrong 6" }
-                { "text": "Wrong 7" }
+                { "text": "Wrong 6" },
+                { "text": "Wrong 7" },
                 { "text": "Wrong 8" }
             ],
             "answer": 4
