@@ -40,26 +40,25 @@
             flex: 1;
         }
 
-        .inactive { display: none; }
+        .display-none { display: none; }
+        #answer.revealed { color: red; }
     </style>
 </head>
 <body>
     <main>
-        <div>
-            <button id="renderReader">Scan code</button>
-            <button id="testButton">Test</button>
-            <button id="testButton2">Test 2</button>
-        </div>
-        <div class="inactive" id="reader"></div>
+        <button id="renderReader">Read new card</button>
+        <div class="display-none" id="reader"></div>
         <div id="card">
             <p id="question"></p>
             <ul id="alternatives"></ul>
+            <button id="reveal" disabled>Reveal answer</button>
         </div>
     </main>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) localStorage.clear();
 
+        // 
         var config = {
             fps: 10,
             qrbox: { width: 250, height: 250 },
@@ -70,18 +69,8 @@
         var html5QrcodeScanner = undefined;
         var readerContainer = document.getElementById('reader');
 
-        document.getElementById('testButton').addEventListener('click', function() {
-            renderQuestion('https://najls.github.io/crumm/test.json');
-        });
-
-        document.getElementById('testButton2').addEventListener('click', function() {
-            renderQuestion('https://najls.github.io/crumm/sega.json');
-        });
-
         document.getElementById('renderReader').addEventListener('click', async function() {
-            readerContainer.classList.toggle('inactive');
-
-            if (readerContainer.classList.contains('inactive')) {
+            if (readerContainer.classList.toggle('display-none')) {
                 html5QrcodeScanner.clear();
             }
             else {
@@ -90,9 +79,14 @@
             }
         });
 
+        document.getElementById('reveal').addEventListener('click', function() {
+            document.getElementById('answer').classList.add('revealed');
+            this.disabled = true;
+        });
+
         function onScanSuccess(decodedText, decodedResult) {
             html5QrcodeScanner.clear();
-            readerContainer.classList.add('inactive');
+            readerContainer.classList.add('display-none');
             renderQuestion(decodedText);
         }
 
@@ -102,7 +96,6 @@
 
         async function renderQuestion(url) {
             let question = await loadQuestion(url);
-            console.log(question)
             document.getElementById('question').innerText = question.text;
 
             let ul = document.getElementById('alternatives');
@@ -112,9 +105,11 @@
                 let li = document.createElement('li');
                 let text = document.createTextNode(question.alternatives[i].text);
                 li.append(text);
-                if (i == question.answer) li.classList.add('correct');
+                if (i == question.answer) li.setAttribute('id', 'answer');
                 ul.appendChild(li);
             }
+
+            document.getElementById('reveal').disabled = false;
         }
 
         async function loadQuestion(url) {
@@ -123,8 +118,8 @@
 
             if (!localStorage.getItem(url)) {
                 localStorage.setItem(url, JSON.stringify({
-                    'size': json.questions.length,
-                    'draw': [...Array(json.questions.length).keys()]
+                    'size': json.questions.length, // number of questions
+                    'draw': [...Array(json.questions.length).keys()] // draw card pile
                 }));
             }
 
