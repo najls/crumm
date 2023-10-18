@@ -56,6 +56,9 @@
         </div>
     </main>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('clear')) localStorage.clear();
+
         var config = {
             fps: 10,
             qrbox: { width: 250, height: 250 },
@@ -98,7 +101,8 @@
 
         async function renderQuestion(url) {
             let question = await loadQuestion(url);
-            document.getElementById('question').innerHTML = question.text;
+            console.log(question)
+            document.getElementById('question').innerText = question.text;
         }
 
         async function loadQuestion(url) {
