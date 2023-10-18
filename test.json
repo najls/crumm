@@ -8,7 +8,7 @@
                 { "text": "Wrong 1" },
                 { "text": "Wrong 2" }
             ],
-            "answer": 0
+            "answer": 1
         },
         {
             "text": "Question two?",
@@ -17,7 +17,7 @@
                 { "text": "Wrong 2" },
                 { "text": "Correct" }
             ],
-            "answer": 2
+            "answer": 3
         },
         {
             "text": "Question three?",
@@ -27,7 +27,7 @@
                 { "text": "Wrong 2" },
                 { "text": "Wrong 3" }
             ],
-            "answer": 1
+            "answer": 2
         },
         {
             "text": "Question four?",
@@ -37,7 +37,7 @@
                 { "text": "Correct" },
                 { "text": "Wrong 3" }
             ],
-            "answer": 2
+            "answer": 3
         },
         {
             "text": "Question five?",
@@ -51,7 +51,7 @@
                 { "text": "Wrong 7" },
                 { "text": "Wrong 8" }
             ],
-            "answer": 4
+            "answer": 5
         }
     ]
 }

@@ -8,7 +8,7 @@
                 { "text": "Taels" },
                 { "text": "Blue heghog" }
             ],
-            "answer": 0
+            "answer": 1
         },
         {
             "text": "Is Sega best then Nintendont?",
@@ -17,7 +17,7 @@
                 { "text": "Yes" },
                 { "text": "Don't" }
             ],
-            "answer": 1
+            "answer": 2
         },
         {
             "text": "Rings?",
@@ -26,7 +26,7 @@
                 { "text": "Heghgego" },
                 { "text": "Tailes" }
             ],
-            "answer": 0
+            "answer": 1
         }
     ]
 }

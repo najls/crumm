@@ -1,0 +1,59 @@
+{
+    "id": "Sega",
+    "questions": [
+        {
+            "text": "Sega skapade Alex Kidd för att konkurrera med Mario. Vilket var det första Alex Kid-spelet?",
+            "alternatives": [
+                { "text": "Alex Kid Lost Stars" },
+                { "text": "Alex Kid in Shinobi World" },
+                { "text": "Alex Kid in Miracle World" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Wonder Boy är en serie med väldigt många olika förvirrande titlar. Hur många Wonder Boy-spel släpptes till Genesis och Master System tillsammans?",
+            "alternatives": [
+                { "text": "6" },
+                { "text": "7" },
+                { "text": "4" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vilket spel på Genesis är också känt som The Story Of Thor?",
+            "alternatives": [
+                { "text": "Beyond Oasis" },
+                { "text": "Light Crusader" },
+                { "text": "Sword of Vermillion" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Sonic 2 är ett av världens bästa plattformsspel. Vilken är 2a leveln i Sonic 2?",
+            "alternatives": [
+                { "text": "Chemical Plant Zone" },
+                { "text": "Green Hill Zone" },
+                { "text": "Marble zone" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Out Run visade var skåpet skulle stå i 8-bit racing. Hur många Out Run-spel släpptes till Master System?",
+            "alternatives": [
+                { "text": "2" },
+                { "text": "4" },
+                { "text": "1" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vad heter Sonic-spelet som släpptes till Dreamcast?",
+            "alternatives": [
+                { "text": "Sonic Colors" },
+                { "text": "Sonic Adventure" },
+                { "text": "Sonic Chaos" }
+            ],
+            "answer": 2
+        },
+    ]
+}

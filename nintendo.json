@@ -1,0 +1,59 @@
+{
+    "id": "Nintendo",
+    "questions": [
+        {
+            "text": "NES första titlar hade alla den karaktäristiska svarta boxen, det blev 30 stycken totalt. Vilket spel är INTE ett black box- spel?",
+            "alternatives": [
+                { "text": "Pop Eye" },
+                { "text": "Wrecking crew" },
+                { "text": "Solomon's Key" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Mario blev efter ett tag Nintendos flaggskepp. Men i vilket spel debuterade Mario?",
+            "alternatives": [
+                { "text": "Tennis" },
+                { "text": "Donkey Kong" },
+                { "text": "Golf" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Zelda 2 är seriens svarta får och är känt för sina svåra tempel. Hur många tempel finns det i Zelda 2, inklusive sista templet?",
+            "alternatives": [
+                { "text": "7" },
+                { "text": "6" },
+                { "text": "8" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Metroid 2 Return Of Samus är ett legendariskt och innovativt metroidvania för sin tid. Vilken weapon upgrade hittar man först av följande?",
+            "alternatives": [
+                { "text": "Spazer" },
+                { "text": "Wave beam" },
+                { "text": "Ice Beam" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vilken är första bossen i Zelda 1?",
+            "alternatives": [
+                { "text": "Dodongo (Triceratops)" },
+                { "text": "Aquamentus (Draken)" },
+                { "text": "Gleeok (Hydran)" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Cobra triangle är en klassiker till NES från 1989. Men vad är det för typ av spel?",
+            "alternatives": [
+                { "text": "Båt-racing" },
+                { "text": "Bil-racing" },
+                { "text": "Flygsimulator" }
+            ],
+            "answer": 1
+        }
+    ]
+}

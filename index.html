@@ -10,7 +10,8 @@
 
     <style>
         :root {
-            --gap: 1rem;
+            --gap: .75rem;
+            --gill-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         body {
@@ -18,7 +19,7 @@
             color: white;
             display: flex;
             flex-direction: column;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: var(--gill-sans);
             margin: 0;
             min-height: 100vh;
         }
@@ -32,33 +33,69 @@
             padding: var(--gap);
         }
 
-        body, main { gap: var(--gap); }
+        button {
+            background-color: lightpink;
+            background-image: linear-gradient(to bottom, lightpink, rgb(255, 212, 223), lightpink);
+            border: .5rem solid gray;
+            border-radius: .5rem;
+            border-style: ridge;
+            font-size: 1.5rem;
+            font-family: var(--gill-sans);
+            font-weight: 700;
+            padding: .25rem;
+            text-transform: uppercase;
+        }
+
+        button:disabled {
+            background-color: gray;
+            background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
+        }
+
         #renderReader {}
 
         #card {
-            background-color: blueviolet;
+            background-color: #000123;
+            background-image: linear-gradient(to bottom right, rgb(1, 0, 175), rgb(0, 1, 35));
             border: var(--gap) solid white;
-            border-radius: 1.5rem;
+            border-radius: 1rem;
+            border-style: ridge;
             display: flex;
             flex: 1;
             flex-direction: column;
+            padding: var(--gap);
         }
 
         #question {
-            flex: 1;
-            font-size: 2rem;
-            text-align: center;
-        }
-        #alternatives {
+            align-items: center;
             display: flex;
             flex: 1;
-            flex-direction: column;
-            list-style: none;
+            font-size: 2rem;
+            justify-content: center;
+            margin: 0;
         }
-        #reveal {}
+
+        #alternatives {
+            display: flex;
+            flex: 0;
+            flex-direction: column;
+            font-size: 1.5rem;
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0;
+        }
+
+        #alternatives li {
+            flex: 1;
+            text-align: center;
+        }
+
+        #reveal { margin: var(--gap); }
 
         .display-none { display: none; }
-        #answer.revealed { color: red; }
+        #answer.revealed::before { content: "[ "; }
+        #answer.revealed::after { content: " ]"; }
+
+        body, main, #alternatives { gap: var(--gap); }
     </style>
 </head>
 <body>
@@ -86,14 +123,13 @@
         var readerContainer = document.getElementById('reader');
 
         document.getElementById('renderReader').addEventListener('click', async function() {
-            // if (readerContainer.classList.toggle('display-none')) {
-            //     html5QrcodeScanner.clear();
-            // }
-            // else {
-            //     html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
-            //     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-            // }
-            renderQuestion('https://najls.github.io/crumm/test.json');
+            if (readerContainer.classList.toggle('display-none')) {
+                html5QrcodeScanner.clear();
+            }
+            else {
+                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
+                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+            }
         });
 
         document.getElementById('reveal').addEventListener('click', function() {
@@ -122,7 +158,7 @@
                 let li = document.createElement('li');
                 let text = document.createTextNode(question.alternatives[i].text);
                 li.append(text);
-                if (i == question.answer) li.setAttribute('id', 'answer');
+                if (i + 1 == question.answer) li.setAttribute('id', 'answer');
                 ul.appendChild(li);
             }
 
