@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>TP</title>
+    <title>Card Randomizer Utility for Midgar Madness</title>
 
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script> <!-- https://github.com/mebjas/html5-qrcode/ -->
 
@@ -53,6 +53,7 @@
         <div class="inactive" id="reader"></div>
         <div id="card">
             <p id="question"></p>
+            <ul id="alternatives"></ul>
         </div>
     </main>
     <script>
@@ -103,6 +104,17 @@
             let question = await loadQuestion(url);
             console.log(question)
             document.getElementById('question').innerText = question.text;
+
+            let ul = document.getElementById('alternatives');
+            while (ul.firstChild) ul.removeChild(ul.firstChild);
+
+            for (let i = 0; i < question.alternatives.length; i++) {
+                let li = document.createElement('li');
+                let text = document.createTextNode(question.alternatives[i].text);
+                li.append(text);
+                if (i == question.answer) li.classList.add('correct');
+                ul.appendChild(li);
+            }
         }
 
         async function loadQuestion(url) {

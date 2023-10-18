@@ -4,38 +4,38 @@
         {
             "text": "Question one?",
             "alternatives": [
-                { "alternative": "Correct" },
-                { "alternative": "Wrong 1" },
-                { "alternative": "Wrong 2" }
+                { "text": "Correct" },
+                { "text": "Wrong 1" },
+                { "text": "Wrong 2" }
             ],
             "answer": 0
         },
         {
             "text": "Question two?",
             "alternatives": [
-                { "alternative": "Wrong 1" },
-                { "alternative": "Wrong 2" },
-                { "alternative": "Correct" }
+                { "text": "Wrong 1" },
+                { "text": "Wrong 2" },
+                { "text": "Correct" }
             ],
             "answer": 2
         },
         {
             "text": "Question three?",
             "alternatives": [
-                { "alternative": "Wrong 1" },
-                { "alternative": "Correct" },
-                { "alternative": "Wrong 2" },
-                { "alternative": "Wrong 3" }
+                { "text": "Wrong 1" },
+                { "text": "Correct" },
+                { "text": "Wrong 2" },
+                { "text": "Wrong 3" }
             ],
             "answer": 1
         },
         {
             "text": "Question four?",
             "alternatives": [
-                { "alternative": "Wrong 1" },
-                { "alternative": "Wrong 2" },
-                { "alternative": "Correct" },
-                { "alternative": "Wrong 3" }
+                { "text": "Wrong 1" },
+                { "text": "Wrong 2" },
+                { "text": "Correct" },
+                { "text": "Wrong 3" }
             ],
             "answer": 2
         }

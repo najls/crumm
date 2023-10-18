@@ -4,27 +4,27 @@
         {
             "text": "Who is sonic?",
             "alternatives": [
-                { "alternative": "Hedgehorg?" },
-                { "alternative": "Taels" },
-                { "alternative": "Blue heghog" }
+                { "text": "Hedgehorg?" },
+                { "text": "Taels" },
+                { "text": "Blue heghog" }
             ],
             "answer": 0
         },
         {
             "text": "Is Sega best then Nintendont?",
             "alternatives": [
-                { "alternative": "Yes" },
-                { "alternative": "Yes" },
-                { "alternative": "Don't" }
+                { "text": "Yes" },
+                { "text": "Yes" },
+                { "text": "Don't" }
             ],
             "answer": 1
         },
         {
             "text": "Rings?",
             "alternatives": [
-                { "alternative": "Sonic" },
-                { "alternative": "Heghgego" },
-                { "alternative": "Tailes" }
+                { "text": "Sonic" },
+                { "text": "Heghgego" },
+                { "text": "Tailes" }
             ],
             "answer": 0
         }
