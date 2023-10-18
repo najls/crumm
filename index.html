@@ -61,6 +61,13 @@
         var html5QrcodeScanner = undefined;
         var readerContainer = document.getElementById('reader');
 
+        var categoryMap = new Map();
+
+        // var foo = JSON.parse('https://najls.github.io/symmetrical-octo-robot/sega.json');
+        // console.log(foo.questions);
+
+        loadQuestion()
+
         document.getElementById('renderReader').addEventListener('click', async function() {
             readerContainer.classList.toggle('inactive');
 
@@ -80,6 +87,15 @@
 
         function onScanFailure(error) {
             // handle scan failure, usually better to ignore and keep scanning.
+        }
+
+        async function loadQuestion() {
+            const response = await fetch('https://najls.github.io/symmetrical-octo-robot/sega.json');
+            const json = await response.json();
+
+            console.log(json['id']);
+
+            console.log(json['questions'][Math.floor(Math.random() * json.questions.length)]['question']);
         }
     </script>
 </body>
