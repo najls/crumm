@@ -2,7 +2,7 @@
     "id": "Sega",
     "questions": [
         {
-            "question": "Who is sonic?",
+            "text": "Who is sonic?",
             "alternatives": [
                 { "alternative": "Hedgehorg?" },
                 { "alternative": "Taels" },
@@ -11,7 +11,7 @@
             "answer": 0
         },
         {
-            "question": "Is Sega best then Nintendont?",
+            "text": "Is Sega best then Nintendont?",
             "alternatives": [
                 { "alternative": "Yes" },
                 { "alternative": "Yes" },
@@ -20,7 +20,7 @@
             "answer": 1
         },
         {
-            "question": "Rings?",
+            "text": "Rings?",
             "alternatives": [
                 { "alternative": "Sonic" },
                 { "alternative": "Heghgego" },

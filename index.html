@@ -66,8 +66,6 @@
         var html5QrcodeScanner = undefined;
         var readerContainer = document.getElementById('reader');
 
-        var categoryMap = new Map();
-
         document.getElementById('testButton').addEventListener('click', function() {
             renderQuestion('https://najls.github.io/crumm/test.json');
         });
@@ -99,34 +97,34 @@
         }
 
         async function renderQuestion(url) {
-            let obj = await loadQuestion(url);
-            console.log(obj)
-            document.getElementById('question').innerHTML = obj.question;
+            let question = await loadQuestion(url);
+            document.getElementById('question').innerHTML = question.text;
         }
 
         async function loadQuestion(url) {
             const response = await fetch(url);
             const json = await response.json();
 
-            if (!categoryMap.has(url)) {
-                categoryMap.set(url, {
-                    'length': json.questions.length,
+            if (!localStorage.getItem(url)) {
+                localStorage.setItem(url, JSON.stringify({
+                    'size': json.questions.length,
                     'draw': [...Array(json.questions.length).keys()]
-                });
+                }));
             }
 
             return getRandomQuestion(json, url);
         }
 
         function getRandomQuestion(data, key) {
-            let c = categoryMap.get(key);
+            let category = JSON.parse(localStorage.getItem(key));
 
-            if (!c.draw.length) c.draw = [...Array(data.questions.length).keys()];
+            if (!category.draw.length) category.draw = [...Array(category.size).keys()];
 
-            let i = Math.floor(Math.random() * c.draw.length);
-            let n = c.draw[i];
+            let i = Math.floor(Math.random() * category.draw.length);
+            let n = category.draw[i];
 
-            c.draw.splice(i, 1);
+            category.draw.splice(i, 1);
+            localStorage.setItem(key, JSON.stringify(category));
             return data.questions[n];
         }
     </script>

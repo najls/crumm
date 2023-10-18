@@ -2,7 +2,7 @@
     "id": "Test",
     "questions": [
         {
-            "question": "Question one?",
+            "text": "Question one?",
             "alternatives": [
                 { "alternative": "Correct" },
                 { "alternative": "Wrong 1" },
@@ -11,7 +11,7 @@
             "answer": 0
         },
         {
-            "question": "Question two?",
+            "text": "Question two?",
             "alternatives": [
                 { "alternative": "Wrong 1" },
                 { "alternative": "Wrong 2" },
@@ -20,7 +20,7 @@
             "answer": 2
         },
         {
-            "question": "Question three?",
+            "text": "Question three?",
             "alternatives": [
                 { "alternative": "Wrong 1" },
                 { "alternative": "Correct" },
@@ -30,7 +30,7 @@
             "answer": 1
         },
         {
-            "question": "Question four?",
+            "text": "Question four?",
             "alternatives": [
                 { "alternative": "Wrong 1" },
                 { "alternative": "Wrong 2" },
