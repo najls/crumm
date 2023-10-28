@@ -8,10 +8,14 @@
 
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script> <!-- https://github.com/mebjas/html5-qrcode/ -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --gap: .75rem;
-            --gill-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --chakra: 'Chakra Petch', sans-serif;
         }
 
         body {
@@ -19,13 +23,12 @@
             color: white;
             display: flex;
             flex-direction: column;
-            font-family: var(--gill-sans);
+            font-family: var(--chakra);
             margin: 0;
             min-height: 100vh;
         }
 
         header { padding: var(--gap); }
-
         main {
             display: flex;
             flex: 1;
@@ -36,12 +39,12 @@
         button {
             background-color: lightpink;
             background-image: linear-gradient(to bottom, lightpink, rgb(255, 212, 223), lightpink);
-            border: .5rem solid gray;
+            border: .25rem solid gray;
             border-radius: .5rem;
             border-style: ridge;
             color: black;
             font-size: 1.5rem;
-            font-family: var(--gill-sans);
+            font-family: var(--chakra);
             font-weight: 700;
             padding: .25rem;
             text-transform: uppercase;
@@ -52,16 +55,19 @@
             background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
         }
 
+        #renderReader { margin-bottom: calc(var(--gap) / 2); }
         #card {
             background-color: #000123;
             background-image: linear-gradient(to bottom right, rgb(1, 0, 175), rgb(0, 1, 35));
-            border: var(--gap) solid white;
+            border: .25rem solid white;
             border-radius: 1rem;
             border-style: ridge;
             display: flex;
             flex: 1;
             flex-direction: column;
+            margin-top: calc(var(--gap) / 2);
             padding: var(--gap);
+            text-shadow: .125rem .125rem black;
         }
 
         #question {
@@ -88,13 +94,9 @@
             text-align: center;
         }
 
-        #reveal { margin: var(--gap); }
-
         .display-none { display: none; }
         #answer.revealed::before { content: "[ "; }
         #answer.revealed::after { content: " ]"; }
-
-        body, main, #alternatives { gap: var(--gap); }
     </style>
 </head>
 <body>
@@ -102,14 +104,16 @@
         <button id="renderReader" data-open="Read new card" data-close="Close reader">Read new card</button>
         <div class="display-none" id="reader"></div>
         <div id="card">
-            <p id="question"></p>
-            <ul id="alternatives"></ul>
+            <p id="question">Wonder Boy är en serie med väldigt många olika förvirrande titlar. Hur många Wonder Boy-spel släpptes till Genesis och Master System tillsammans?</p>
+            <ul id="alternatives"><li id="answer">6</li><li>7</li><li>4</li></ul>
             <button id="reveal" disabled>Reveal answer</button>
         </div>
     </main>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) localStorage.clear();
+
+        var renderReadBtn = document.getElementById('renderReader');
 
         const config = {
             fps: 10,
@@ -121,12 +125,13 @@
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             stopCamera();
+            renderReadBtn.innerText = renderReadBtn.dataset.open;
             readerContainer.classList.add('display-none');
             renderQuestion(decodedText);
         };
 
         var readerContainer = document.getElementById('reader');
-        document.getElementById('renderReader').addEventListener('click', async function() {
+        renderReadBtn.addEventListener('click', async function() {
             if (readerContainer.classList.toggle('display-none')) {
                 stopCamera();
                 this.innerText = this.dataset.open;
