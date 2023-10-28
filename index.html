@@ -99,7 +99,7 @@
 </head>
 <body>
     <main>
-        <button id="renderReader">Read new card</button>
+        <button id="renderReader" data-open="Read new card" data-close="Close reader">Read new card</button>
         <div class="display-none" id="reader"></div>
         <div id="card">
             <p id="question"></p>
@@ -127,8 +127,14 @@
 
         var readerContainer = document.getElementById('reader');
         document.getElementById('renderReader').addEventListener('click', async function() {
-            if (readerContainer.classList.toggle('display-none')) { stopCamera(); }
-            else { html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback); }
+            if (readerContainer.classList.toggle('display-none')) {
+                stopCamera();
+                this.innerText = this.dataset.open;
+            }
+            else {
+                html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+                this.innerText = this.dataset.close;
+            }
         });
 
         document.getElementById('reveal').addEventListener('click', function() {
@@ -139,9 +145,9 @@
         function stopCamera() {
             html5QrCode.stop().then((ignore) => {
                 html5QrCode.clear();
-            }).catch((err) => {
+            })/*.catch((err) => {
                 console.log(`Camera stop failed: ${err}`)
-            });
+            });*/
         }
 
         async function renderQuestion(url) {
