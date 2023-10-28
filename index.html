@@ -111,13 +111,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) localStorage.clear();
 
-        const html5QrCode = new Html5Qrcode("reader");
-        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-            html5QrcodeScanner.clear();
-            readerContainer.classList.add('display-none');
-            renderQuestion(decodedText);
-        };
-
         const config = {
             fps: 10,
             qrbox: { width: 250, height: 250 },
@@ -125,24 +118,31 @@
             supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
         };
 
+        const html5QrCode = new Html5Qrcode("reader");
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            stopCamera();
+            readerContainer.classList.add('display-none');
+            renderQuestion(decodedText);
+        };
+
         var readerContainer = document.getElementById('reader');
         document.getElementById('renderReader').addEventListener('click', async function() {
-            if (readerContainer.classList.toggle('display-none')) {
-                html5QrCode.stop().then((ignore) => {
-                    html5QrCode.clear();
-                }).catch((err) => {
-                    console.log(`Camera stop failed: ${err}`)
-                });
-            }
-            else {
-                html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
-            }
+            if (readerContainer.classList.toggle('display-none')) { stopCamera(); }
+            else { html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback); }
         });
 
         document.getElementById('reveal').addEventListener('click', function() {
             document.getElementById('answer').classList.add('revealed');
             this.disabled = true;
         });
+
+        function stopCamera() {
+            html5QrCode.stop().then((ignore) => {
+                html5QrCode.clear();
+            }).catch((err) => {
+                console.log(`Camera stop failed: ${err}`)
+            });
+        }
 
         async function renderQuestion(url) {
             let question = await loadQuestion(url);
