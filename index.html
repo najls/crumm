@@ -39,6 +39,7 @@
             border: .5rem solid gray;
             border-radius: .5rem;
             border-style: ridge;
+            color: black;
             font-size: 1.5rem;
             font-family: var(--gill-sans);
             font-weight: 700;
@@ -50,8 +51,6 @@
             background-color: gray;
             background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
         }
-
-        #renderReader {}
 
         #card {
             background-color: #000123;
@@ -112,23 +111,31 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) localStorage.clear();
 
-        var config = {
+        const html5QrCode = new Html5Qrcode("reader");
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            html5QrcodeScanner.clear();
+            readerContainer.classList.add('display-none');
+            renderQuestion(decodedText);
+        };
+
+        const config = {
             fps: 10,
             qrbox: { width: 250, height: 250 },
             rememberLastUsedCamera: true,
             supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
         };
 
-        var html5QrcodeScanner = undefined;
         var readerContainer = document.getElementById('reader');
-
         document.getElementById('renderReader').addEventListener('click', async function() {
             if (readerContainer.classList.toggle('display-none')) {
-                html5QrcodeScanner.clear();
+                html5QrCode.stop().then((ignore) => {
+                    html5QrCode.clear();
+                }).catch((err) => {
+                    console.log(`Camera stop failed: ${err}`)
+                });
             }
             else {
-                html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
-                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+                html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
             }
         });
 
@@ -136,16 +143,6 @@
             document.getElementById('answer').classList.add('revealed');
             this.disabled = true;
         });
-
-        function onScanSuccess(decodedText, decodedResult) {
-            html5QrcodeScanner.clear();
-            readerContainer.classList.add('display-none');
-            renderQuestion(decodedText);
-        }
-
-        function onScanFailure(error) {
-            // handle scan failure, usually better to ignore and keep scanning.
-        }
 
         async function renderQuestion(url) {
             let question = await loadQuestion(url);
