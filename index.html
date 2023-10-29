@@ -55,7 +55,7 @@
             background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
         }
 
-        #renderReader { margin-bottom: calc(var(--gap) / 2); }
+        #renderReader { margin-top: var(--gap); }
         #card {
             background-color: #000123;
             background-image: linear-gradient(to bottom right, rgb(1, 0, 175), rgb(0, 1, 35));
@@ -65,7 +65,6 @@
             display: flex;
             flex: 1;
             flex-direction: column;
-            margin-top: calc(var(--gap) / 2);
             padding: var(--gap);
             text-shadow: .125rem .125rem black;
         }
@@ -101,7 +100,6 @@
 </head>
 <body>
     <main>
-        <button id="renderReader" data-open="Read new card" data-close="Close reader">Read new card</button>
         <div class="display-none" id="reader"></div>
         <div id="card">
             <div>
@@ -110,6 +108,7 @@
             </div>
             <button id="reveal" disabled>Reveal answer</button>
         </div>
+        <button id="renderReader" data-open="Read new card" data-close="Close reader">Read new card</button>
     </main>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
