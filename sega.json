@@ -1,5 +1,4 @@
 {
-    "id": "Sega",
     "questions": [
         {
             "text": "Sega skapade Alex Kidd för att konkurrera med Mario. Vilket var det första Alex Kid-spelet?",
@@ -54,6 +53,294 @@
                 { "text": "Sonic Chaos" }
             ],
             "answer": 2
+        },
+        {
+            "text": "Sega var kända för sina arkadportar. Vilket spel släpptes först?",
+            "alternatives": [
+                { "text": "Golden Axe" },
+                { "text": "Altered Beast" },
+                { "text": "Gouls and Ghosts" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Golden Axe blev snabbt en populär arkadport till både Genesis och Master System. Vad heter huvudkaraktären?",
+            "alternatives": [
+                { "text": "Gilius" },
+                { "text": "Ax Battler" },
+                { "text": "Tyris Flare" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Genesis hårdvara var mycket effektiv för Schmups! Vilket av följande schmups har INTE horisontell scrolling?",
+            "alternatives": [
+                { "text": "Gaires" },
+                { "text": "Thunder Force IV" },
+                { "text": "Musha" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Sega does what Nintendon't, i synnerhet med deras Mickey Mouse-spel. Vilket av följande spel är INTE en Mickey Mouse-titel till Master System?",
+            "alternatives": [
+                { "text": "Forest of Illusion" },
+                { "text": "Land of Illusion" },
+                { "text": "Legend of Illusion" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vilket är det bäst rankade SEGA genesis-spelet på IGN?",
+            "alternatives": [
+                { "text": "Sonic 2" },
+                { "text": "Gunstar Heroes" },
+                { "text": "Street of Rage 2" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Quack Shot till Genesis är ett mycket bra, icke linjärt plattformsspel där Kalle Anka springer runt med en sugproppspistol. Men vad gör den?",
+            "alternatives": [
+                { "text": "Paralyserar fiender en kort stund" },
+                { "text": "Den dödar fiender" },
+                { "text": "Den används ej som vapen, snarare som en hookshot." }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Det som gör Psycho Fox speciellt är möjligheten till karaktärsbyten där alla har en förmåga. Vilken är egentligen apans förmåga?",
+            "alternatives": [
+                { "text": "Springer fort" },
+                { "text": "Hoppar högt" },
+                { "text": "Boxar hårt" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Altered Beast har en unik funktion där spelaren blir en ny best för varje stage. Hur många banor finns det i Altered Beast till Genesis?",
+            "alternatives": [
+                { "text": "5" },
+                { "text": "4" },
+                { "text": "6" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Michael Jackson hade ett nära samarbete med Sega vilket resulterade i det brillianta liret Moonwalker. Vilken av följande låtar av MJ är inte med i spelet?",
+            "alternatives": [
+                { "text": "Smooth Criminal" },
+                { "text": "Beat it" },
+                { "text": "The way you make me feel" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vilket av följande spel är portat till Sega Saturn?",
+            "alternatives": [
+                { "text": "Virtua Tennis" },
+                { "text": "Castlevania: Symphony of the Night" },
+                { "text": "Gun Star Heroes" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Hur många banor finns det i Mickey Mouse Castle of Illusion till Master System?",
+            "alternatives": [
+                { "text": "6" },
+                { "text": "7" },
+                { "text": "8" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Det brukar råda en debatt bland gamers vilken version av Street fighter 2 som är bäst. Vad är skillnaden mellan SF2 till Mega Drive och Super SF2 till SNES?",
+            "alternatives": [
+                { "text": "Mega Drive har ett “battle mode”" },
+                { "text": "Blanka, E.Honda har varsitt nytt move" },
+                { "text": "M.Bison är inte sista bossen, utan Vega" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vilket är det gömda inbyggda spelet på Sega Master System 1?",
+            "alternatives": [
+                { "text": "Hang on" },
+                { "text": "Alex Kidd in Miracle World" },
+                { "text": "Snail Maze" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Ett av följande spel släpptes INTE till både Sega Master System och Sega Genesis. Vilket?",
+            "alternatives": [
+                { "text": "R-type" },
+                { "text": "Double Dragon" },
+                { "text": "Wonder Boy in Monster Land" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "I spelet Rampage till Sega Master System kontrollerar du tre monster som ska krossa byggnader. Vilka typer av monster är det?",
+            "alternatives": [
+                { "text": "En ödla, en gorilla och örn" },
+                { "text": "En gorilla, orm och varg" },
+                { "text": "En ödla, gorilla och varg" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "I Spelcirkeln är Master of Darkness till Master System ett av spelen vi ska ha provat. I vilken stad startar äventyret?",
+            "alternatives": [
+                { "text": "Paris" },
+                { "text": "London" },
+                { "text": "New York" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "I plattformspelet Astal till Saturn spelar man som den rödhårige hjälten Astal. Astal har ett djur som medhjälpare, vad för djur?",
+            "alternatives": [
+                { "text": "En fågel" },
+                { "text": "En hund" },
+                { "text": "En mus" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Dark Stalkers till Sega Saturn är ett topprankat spel till Saturn. Vad är det för typ av spel?",
+            "alternatives": [
+                { "text": "RPG" },
+                { "text": "Fighting" },
+                { "text": "Plattformsspel" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Alla kommer vi ihåg Ecco, den söta delfinen. Hur många Ecco-spel släpptes till Genesis?",
+            "alternatives": [
+                { "text": "2" },
+                { "text": "3" },
+                { "text": "4" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Det släpptes en “port” av Turtles in Time till Mega Drive som på många sätt överträffar SNES-liret. Vad är undertiteln på detta Turtles-spel?",
+            "alternatives": [
+                { "text": "The Hyperstone Heist" },
+                { "text": "Shredders Revenge" },
+                { "text": "Fall of the Footclan" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Mega Man: The Wily Wars släpptes till Genesis. Vilka gamla Nes-spel ingår i Wily Wars?",
+            "alternatives": [
+                { "text": "Mega Man 1, 2, 3, 4" },
+                { "text": "Mega Man 1, 2, 4, 5" },
+                { "text": "Mega Man 1, 2, 3" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Shenmue var ett revolutionerande spel då det kom. Hur många Shenmue-spel släpptes till Sega Dreamcast?",
+            "alternatives": [
+                { "text": "1" },
+                { "text": "2" },
+                { "text": "3" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sonic har en Nemesis i Sonic 3 som sedan blir Sonics medhjälpare. Vad är namnet på honom?",
+            "alternatives": [
+                { "text": "Milo" },
+                { "text": "Tales" },
+                { "text": "Knuckles" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Det första Sonic-spelet till Mega Drive ritade om kartan för plattformsspel. När släpptes Sonic 1?",
+            "alternatives": [
+                { "text": "1991" },
+                { "text": "1990" },
+                { "text": "1989" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vilket av följande Disney-spel finns INTE att hitta i Genesis-katalogen?",
+            "alternatives": [
+                { "text": "Jungelboken" },
+                { "text": "Darkwing Duck" },
+                { "text": "Skönheten och odjuret" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Gunstar Heroes är ett av de mer hyllade schmup-spelen. Vilken konsol fick INTE en version av detta spel?",
+            "alternatives": [
+                { "text": "Genesis" },
+                { "text": "Game Gear" },
+                { "text": "Master System" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vilket av följande spel är ett Phantasy Star-spel till Game Gear?",
+            "alternatives": [
+                { "text": "Phantasy Star Gaiden" },
+                { "text": "Phantasy Star Algo System" },
+                { "text": "Phantasy Star Dark Force clan" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Filmlicens-spel var en hit under 90-talet. Vilken av följande filmer fick ett spel till Sega Saturn?",
+            "alternatives": [
+                { "text": "Dödligt vapen" },
+                { "text": "Den siste actionhjälten" },
+                { "text": "Die Hard" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Radiant Silvergun brukar räknas som ett av de bästa Saturn-spelen. Vilket typ av spel är det?",
+            "alternatives": [
+                { "text": "Platform" },
+                { "text": "Shmup" },
+                { "text": "Fighting" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Klassikern Ghosts’n Goblins fick en port till Sega Master System. Vad heter spelet?",
+            "alternatives": [
+                { "text": "Ghouls’n Ghosts" },
+                { "text": "King Arthur" },
+                { "text": "Ghosts’n Goblins" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Ett legendariskt flygsimulator-spel släpptes till Sega Master System. Vilket?",
+            "alternatives": [
+                { "text": "Gradius" },
+                { "text": "Top Gun" },
+                { "text": "After Burner" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilket av följande NES-spel går också att hitta på Master System?",
+            "alternatives": [
+                { "text": "Paper Boy" },
+                { "text": "Contra" },
+                { "text": "Metal Gear" }
+            ],
+            "answer": 1
         }
     ]
 }

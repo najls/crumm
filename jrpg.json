@@ -1,0 +1,166 @@
+{
+    "questions": [
+        {
+            "text": "I spelet Earthbound får du följa Ness och hans kamrater på ett psykedeliskt äventyr i det fiktiva landet Eagleland. I Japan hade spelet en annan titel, vilken?",
+            "alternatives": [
+                { "text": "Mother" },
+                { "text": "Mother 2" },
+                { "text": "Mother 3" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Hur lyder den klassiska kommentaren av Aerith i Midgar slums, när hon och Cloud besöker lokalbefolkningen?",
+            "alternatives": [
+                { "text": "This guy are sick" },
+                { "text": "These guy is sick" },
+                { "text": "This guys was sick" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Red XIII är både gullig och livsfarlig! Vad är hens riktiga namn?",
+            "alternatives": [
+                { "text": "Nagano" },
+                { "text": "Hikoki" },
+                { "text": "Nanaki" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Ivalice är en värld skapad av Yasumi Matsuno och Square. Hur många spel utspelar sig i denna nu ikoniska värld?",
+            "alternatives": [
+                { "text": "4" },
+                { "text": "3" },
+                { "text": "6" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "I Suikoden II träffar du ett stort antal medhjälpare under din resa genom världen. Dessa medhjälpare kallas för stars of destiny. Hur många stars of destiny finns det att rekrytera?",
+            "alternatives": [
+                { "text": "102" },
+                { "text": "99" },
+                { "text": "108" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Dragon Quest-serien har aldrig uppnått samma kultstatus som Final Fantasy i väst. Trots detta har de två serierna ändå följts åt på många sätt och inspirerats av varandra. FFXI och FFXIV är båda MMO. Vilket av alla Dragon Quests är även det ett MMO?",
+            "alternatives": [
+                { "text": "DQIX" },
+                { "text": "DQXII" },
+                { "text": "DQX" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Tales-seriens senaste spel är Tales of Arise från 2021. Första spelet kom till Super Famicom 1995 och heter Tales of Phantasia. Det tog ett antal konsolgenerationer innan spelet lanserades i väst. När, och på vilken konsol fick vi först uppleva Tales of Phantasia?",
+            "alternatives": [
+                { "text": "2002 PS2" },
+                { "text": "2007 Wii" },
+                { "text": "2006 GBA" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "År 1996 fick Chrono Trigger en så kallad gaiden till Satellaview i Japan. Hur lyder titeln?",
+            "alternatives": [
+                { "text": "Dissidia" },
+                { "text": "Radical Dreamers" },
+                { "text": "Stranger of Paradise" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "SNES är ett riktigt JRPG-monster, med närmare 150 spel. Av dessa släpptes majoriteten aldrig i väst. Hur många Final Fantasy-spel till SNES gavs ut i Europa?",
+            "alternatives": [
+                { "text": "1" },
+                { "text": "2" },
+                { "text": "0" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Att ha upplevt eftertexterna i Final Fantasy X-2 står som en riktig fjäder i hatten för MS. I spelet flyger Yuna, Rikku och Payne runt i Spira och jagar “spheres”. Vad kallar sig denna dynamiska trio för?",
+            "alternatives": [
+                { "text": "Hotspots" },
+                { "text": "Gullwings" },
+                { "text": "Nighthawks" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Enligt många är utbytet av skrattsalvor mellan Tidus och Yuna i Final Fantasy X spelets absoluta low point. Minispelet Blitzball är även det ett riktigt bottennapp. Som spelare tvingas man genomlida matcher mot bland andra Ronso Fangs, Al Bhen Psyches och Luca Goers. Vad heter Tidus och Wakkas lag?",
+            "alternatives": [
+                { "text": "Kilika Beasts" },
+                { "text": "Guado Glories" },
+                { "text": "Besaid Aurochs" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Honey Bee Inn är en bordell som ligger i Midgar slums. I vilken sektor ligger Honey Bee Inn?",
+            "alternatives": [
+                { "text": "Sector 7" },
+                { "text": "Sector 6" },
+                { "text": "Sector 5" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Cait Sith är en av följeslagarna till Cloud i Final Fantasy VII. Karaktären består av en katt som rider på axlarna på en gigantisk uppstoppad moogle som fjärrstyrs någonstans inifrån Shinras högkvarter. Vem är det som styr Cait Sith?",
+            "alternatives": [
+                { "text": "Rufus" },
+                { "text": "Palmer" },
+                { "text": "Reeve" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vem av följande karaktärer från FFVII är INTE en medlem i the Turks?",
+            "alternatives": [
+                { "text": "Tseng" },
+                { "text": "Scarlet" },
+                { "text": "Rude" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vart någonstans träffar Cloud och gänget från FFVII på Vincent?",
+            "alternatives": [
+                { "text": "Shinra Mansion" },
+                { "text": "Nibel Reactor" },
+                { "text": "Wutai" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Sephiroths svärd är av typen katana. Vad heter svärdet?",
+            "alternatives": [
+                { "text": "Masamune" },
+                { "text": "Murasame" },
+                { "text": "Muramasa" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Cid Highwind bor i Rocket Town när han först stöter på Cloud och gänget. Cloud är endast 21 år gammal. Hur gammal är Cid?",
+            "alternatives": [
+                { "text": "36" },
+                { "text": "39" },
+                { "text": "32" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Gold Saucer är nöjesfältet i FFVII. Det kostar 3000 gil att gå in. Vad kostar ett lifetime pass?",
+            "alternatives": [
+                { "text": "30.000 gil" },
+                { "text": "300.000 gil" },
+                { "text": "100.000 gil" }
+            ],
+            "answer": 1
+        }
+    ]
+}

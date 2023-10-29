@@ -1,0 +1,382 @@
+{
+    "questions": [
+        {
+            "text": "Under konsolgeneration tre introducerades konsoler såsom Famicom, NES, Atari 7800 och MSX. Segas Master System släpptes även under denna tredje generation. Vad heter Master System till en början i Japan?",
+            "alternatives": [
+                { "text": "Memorex" },
+                { "text": "Mark III" },
+                { "text": "Gemini" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Super Famicom och den europeiska versionen av SNES är snudd på identiska och har den numera klassiska färgsättningen på knapparna. Vilka färger har knapparna A, B, X, Y?",
+            "alternatives": [
+                { "text": "Gul, Röd, Blå, Gul" },
+                { "text": "Grön, Gul, Blå, Röd" },
+                { "text": "Röd, Gul, Blå, Grön" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "SNK var pionjärer med Neo Geo AES vid releasen 1990. Bortsett från att den erbjöd arkadprestanda i hemmet och att den var den första “24-bitars” konsolen erbjöd den något än mer revolutionerande. Vad?",
+            "alternatives": [
+                { "text": "Första konsol med CD-rom." },
+                { "text": "Första konsol med minneskort." },
+                { "text": "Första konsol med 3D-support." }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sega Mega Drive var känd för att erbjuda en uppsjö av tillägg och uppgraderingar. Vad heter hårdvarutillägget som släpptes 1994/1995 och som innehåller två extra processorer och kunde erbjuda 3D-support?",
+            "alternatives": [
+                { "text": "CDX" },
+                { "text": "32X" },
+                { "text": "Power Base" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "NEC PC Engine fick ett nytt namn vid den nordamerikanska releasen. Vad heter PC Engine i Nordamerika?",
+            "alternatives": [
+                { "text": "CoreGrafx" },
+                { "text": "TurboGrafx-16" },
+                { "text": "SuperGrafx" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "PSP står för Playstation Portable och var Sonys första bärbara konsol. Spelen släpptes på små skivkassetter, likt Minidisk. Vad heter detta format?",
+            "alternatives": [
+                { "text": "MS Duo" },
+                { "text": "VMU" },
+                { "text": "UMD" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Nintendo DS är Nintendos mest sålda konsol genom tiderna. Mellan 2004 och 2009 lanserades ett antal olika varianter av DS. Hur många?",
+            "alternatives": [
+                { "text": "3" },
+                { "text": "5" },
+                { "text": "4" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vad heter Nokias mobiltelefon-/konsol-hybrid som lanserades 2003?",
+            "alternatives": [
+                { "text": "N-Gage" },
+                { "text": "N-Joy" },
+                { "text": "N-Slave" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "OG Xbox lanserades år 2001 med en av spelhistoriens mest kritiserade handkontroller. Denna fick givetvis ett smeknamn, vilket?",
+            "alternatives": [
+                { "text": "The Ox" },
+                { "text": "The Log" },
+                { "text": "The Duke" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "När Sony utannonserade Playstation 2 år 1999 var det på tapeten att man skulle branda och marknadsföra sin tech med coola och slagkraftiga namn. Sony hängde på och döpte processorn i konsolen till:",
+            "alternatives": [
+                { "text": "Evolution Engine" },
+                { "text": "Emotion Engine" },
+                { "text": "Entertain Engine" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilket år lanserade Nintendo Game Boys efterträdare Game Boy Advance?",
+            "alternatives": [
+                { "text": "2001" },
+                { "text": "2000" },
+                { "text": "2002" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Gameboy Advance hårdvara utvecklades under dess livstid och konsolens formfaktor ändrades. Hur många varianter kom GBA i?",
+            "alternatives": [
+                { "text": "2" },
+                { "text": "3" },
+                { "text": "4" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sega Dreamcast lanserades 1998 i Japan och i handkontrollen hittade man ett minneskort med display, styrkors och knappar, kallad Visual Memory Unit. Sony hakade på tåget och släppte ett eget interaktivt minneskort år 1999, exklusivt för Japan. Vad heter minneskortet?",
+            "alternatives": [
+                { "text": "Pocketstation" },
+                { "text": "MagicGate" },
+                { "text": "Multi-X" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Microsoft släppte år 2010 ett kameratillbehör till sin Xbox 360 som innebar att man kunde använda sin kropp som kontroller. Vad heter detta tillbehör?",
+            "alternatives": [
+                { "text": "Move" },
+                { "text": "Live Vision" },
+                { "text": "Kinect" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Bergsala var synonymt med Nintendo under 90-talets Sverige. Bergsala distribuerade Nintendo-produkter och stod som grundare för Nintendo Videospelklubb. Vart ligger Bergsalas huvudkontor?",
+            "alternatives": [
+                { "text": "Kungsbacka" },
+                { "text": "Ulricehamn" },
+                { "text": "Lidköping" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Sony, JVC och Mitsubishi tillverkade under 90-/00-talen högkvalitativa bildskärmar ämnade för videoproduktion. Dessa skärmar är nu eftertraktade hos gamers. Vad kallas den här typen av skärmar?",
+            "alternatives": [
+                { "text": "PMV" },
+                { "text": "VPM" },
+                { "text": "PVM" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "RGB är ett videoformat av hög kvalitet som en del konsoler erbjöd i Europa under 80-/90-talet. I Nordamerika däremot lös RGB med sin frånvaro. Amerikanernas högsta bildkvalitet fick de istället genom ett format som är betydligt sämre än RGB. Vilket?",
+            "alternatives": [
+                { "text": "S-video" },
+                { "text": "Komposit" },
+                { "text": "RF" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vilken är Microsofts senaste konsol?",
+            "alternatives": [
+                { "text": "Xbox One X" },
+                { "text": "Xbox One S" },
+                { "text": "Xbox Series X" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Hur många varianter av Nintendo Switch har vi sett sedan lanseringen 2017?",
+            "alternatives": [
+                { "text": "2" },
+                { "text": "3" },
+                { "text": "4" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Amiibo är små figurer av mer eller mindre kända spelkaraktärer som Nintendo lanserade 2014. Idag, nästan tio år senare, är representationen skyhög. Hur många Amiibo finns det?",
+            "alternatives": [
+                { "text": "~110 st" },
+                { "text": "~170 st" },
+                { "text": "~230 st" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Nintendo Wii U släpptes år 2012 och var Nintendos första HD-konsol. Det var även Nintendos första flopp på många år, mycket tack vare den märkliga tablet-kontrollern. Hur många knappar rymmer den runt sin 6,2 tum stora skärm? (exklusive triggers och analogspakar)",
+            "alternatives": [
+                { "text": "8" },
+                { "text": "10" },
+                { "text": "12" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vad heter kontrollen tillhörande Playstation 4?",
+            "alternatives": [
+                { "text": "Dual Sense" },
+                { "text": "DualShock 4" },
+                { "text": "DualShock plus" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sonys PS TV släpps 2013. Vad är PS TV?",
+            "alternatives": [
+                { "text": "Brandad Playstation-monitor" },
+                { "text": "Streamingtjänst för spel" },
+                { "text": "Vita-konsol" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "År 2011 släpper Nintendo uppföljaren till DS, kallad 3DS. Med 3DS kan du uppleva äkta 3D utan speciella glasögon. Vad kallas den 3D-teknik som används?",
+            "alternatives": [
+                { "text": "Stereoscopic 3D" },
+                { "text": "Anisotropic 3D" },
+                { "text": "Anaglyphic 3D" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Nintendo Wii använder remote och nunchuck som primär kontrollmetod. Hur många knappar hittar du på dessa två tillsammans, exklusive analogspak?",
+            "alternatives": [
+                { "text": "9" },
+                { "text": "10" },
+                { "text": "11" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sony har varit kända för att välja “rätt” lagringsmedia till sina tidiga konsoler. PS1 - CD, PS2 - DVD, PS3 - Blu-Ray. Microsoft å andra sidan höll på att lägga krokben på sig själv när de höll på att satsa på fel format till Xbox 360. Vilket format gäller det?",
+            "alternatives": [
+                { "text": "DVD-RW" },
+                { "text": "HD-DVD" },
+                { "text": "DL-DVD" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sega Megadrive lanserades med den klassiska njurformade kontrollern med tre knappar. Några år senare uppdaterades den för att tillgodose blodtörstiga Street Fighters. Hur många knappar har den uppdaterade kontrollern?",
+            "alternatives": [
+                { "text": "4" },
+                { "text": "6" },
+                { "text": "8" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "3DO var en kommersiell flopp och lyckades inte fånga intresset hos hungriga gamers i början av nittiotalet. Att konsolen lanserades till ett pris av 699 dollar för att knappt två år senare kosta 299 dollar talar sitt tydliga språk. Vilken teknikjätte ligger bakom 3DO?",
+            "alternatives": [
+                { "text": "Fujitsu" },
+                { "text": "Philips" },
+                { "text": "Panasonic" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Under nittiotalet var det inte ovanligt att Nintendo la till prefix eller suffix till sina titlar, typ Super Metroid, Mario Kart 64 etc. Vilket prefix användes flitigt hos Sega vid den här tiden? ",
+            "alternatives": [
+                { "text": "Mega" },
+                { "text": "Virtua" },
+                { "text": "Hyper" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilket år släppte Sega sin femte generationens konsol, Saturn?",
+            "alternatives": [
+                { "text": "1995" },
+                { "text": "1996" },
+                { "text": "1994" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Sega Saturn hade en kassett-port i kombination med CD-läsare. Vad användes kassett-porten till?",
+            "alternatives": [
+                { "text": "Bakåtkompatibilitet till Megadrive" },
+                { "text": "Kom aldrig till användning" },
+                { "text": "Utöka RAM-minne" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vilket kodnamn hade Nintendo 64 under sin utvecklingsprocess?",
+            "alternatives": [
+                { "text": "Project Reality" },
+                { "text": "Dolphin" },
+                { "text": "Omega" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "I hur många så kallade funtastic colors hittade man Nintendo 64?",
+            "alternatives": [
+                { "text": "6" },
+                { "text": "8" },
+                { "text": "10" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Final Fight är ofta med i toppstriden bland Beat em up-spel. Men vilka gav ut Final Fight-serien?",
+            "alternatives": [
+                { "text": "Konami" },
+                { "text": "Capcom" },
+                { "text": "Atlus" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilken av följande konsoler har sålt mest world wide?",
+            "alternatives": [
+                { "text": "Sega Master System" },
+                { "text": "Sega Dreamcast" },
+                { "text": "Nintendo Wii U" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Sony Playstation ritade om kartan på konsolmarknaden. När släpptes den?",
+            "alternatives": [
+                { "text": "1994" },
+                { "text": "1995" },
+                { "text": "1996" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Taitos spel till NES är framförallt kända för deras sound. Vilket spel är INTE publicerat av Taito?",
+            "alternatives": [
+                { "text": "Kick Master" },
+                { "text": "Batman" },
+                { "text": "Power Blade" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "När Sony slog skulle slå sig in på marknaden samarbetade dom först med ett annat företag. Vilket?",
+            "alternatives": [
+                { "text": "Nintendo" },
+                { "text": "Philips" },
+                { "text": "Sega" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vad är det för skillnad mellan Sega Mega Drive och Sega Mega Drive 2?",
+            "alternatives": [
+                { "text": "Arbetsminnet och mängden färger per sprite är uppgraderat till MD2" },
+                { "text": "MD2 har stereoljud ut från videoutgången, men saknar hörlursutgång med reglage" },
+                { "text": "MD1 hade bättre arbetsminne och MD2 var en nedbantad version." }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Enix tillsammans med utvecklaren Quintet slogs om RPG-tronen under 90-talet, med bland annat Soul Blazer/Gaia-trilogin. Vilket av följande spel utvecklade Quintet före Soul Blazer?",
+            "alternatives": [
+                { "text": "Brain Lord" },
+                { "text": "Act Raiser" },
+                { "text": "Robotrek" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Sega Master System är en legendarisk konsol med sin hantering av färger! Vad hette konsolen då den lanserades i Japan?",
+            "alternatives": [
+                { "text": "Sega Home System" },
+                { "text": "Sega Entertainment Unit" },
+                { "text": "Sega Mark III" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "RPG-giganterna Enix och Squaresoft slogs tillslut ihop. När?",
+            "alternatives": [
+                { "text": "1998" },
+                { "text": "1999" },
+                { "text": "2002" }
+            ],
+            "answer": 3
+        }
+    ]
+}
