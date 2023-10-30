@@ -75,27 +75,29 @@
             flex-direction: column;
         }
 
-        #card > div > p {
+        #question {
             font-size: 2rem;
             margin: 0;
         }
 
-        #card > div > ul {
+        #question.long { font-size: 1.75rem; }
+        #alternatives {
             font-size: 1.5rem;
             list-style: none;
             margin: 1rem 0;
             padding: 0;
         }
 
-        #card > div > ul > li {
+        #alternatives > li {
+            line-height: 1.125;
             padding-top: .25rem;
             padding-bottom: .25rem;
             text-align: center;
         }
 
-        .display-none { display: none; }
         #answer.revealed::before { content: "[ "; }
         #answer.revealed::after { content: " ]"; }
+        .display-none { display: none; }
     </style>
 </head>
 <body>
@@ -141,7 +143,10 @@
             }
             else {
                 html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback).then(() => {
-                    if (html5QrCode.getState() === 2) { this.innerText = this.dataset.close; }
+                    if (html5QrCode.getState() === 2) {
+                        this.innerText = this.dataset.close;
+                        window.scrollTo(0, 0);
+                    }
                 })
                 .catch((err) => {
                     console.log(err);
@@ -162,7 +167,11 @@
 
         async function renderQuestion(url) {
             let question = await loadQuestion(url);
-            document.getElementById('question').innerText = question.text;
+            let qElem = document.getElementById('question');
+            qElem.innerText = question.text;
+
+            if (question.text.length > 100) { qElem.classList.add('long'); }
+            else { qElem.classList.remove('long'); }
 
             let ul = document.getElementById('alternatives');
             while (ul.firstChild) ul.removeChild(ul.firstChild);
