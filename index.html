@@ -174,8 +174,8 @@
             let qElem = document.getElementById('question');
             qElem.innerText = question.text;
 
-            if (question.text.length > 100) { qElem.classList.add('long'); }
-            else { qElem.classList.remove('long'); }
+            if (question.text.length > 100) qElem.classList.add('long');
+            else qElem.classList.remove('long');
 
             let aLen = 0;
             let aElem = document.getElementById('alternatives');
@@ -192,8 +192,8 @@
                 aElem.appendChild(li);
             }
 
-            if (aLen > 100) { aElem.classList.add('long') }
-            else { aElem.classList.remove('long') }
+            if (aLen > 100) aElem.classList.add('long');
+            else aElem.classList.remove('long');
 
             document.getElementById('reveal').disabled = false;
         }
