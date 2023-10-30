@@ -106,7 +106,7 @@
         <div class="display-none" id="reader"></div>
         <div id="card">
             <div>
-                <p id="question"></p>
+                <p id="question">All right, everyone, let's mosey.</p>
                 <ul id="alternatives"></ul>
             </div>
             <button id="reveal" disabled>Reveal answer</button>
@@ -115,7 +115,10 @@
     </main>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('clear')) localStorage.clear();
+        if (urlParams.has('clear')) {
+            localStorage.clear();
+            document.getElementById('question').innerText = 'Cleared local storage!';
+        }
 
         var renderReadBtn = document.getElementById('renderReader');
 
