@@ -368,6 +368,16 @@
                 { "text": "10" }
             ],
             "answer": 2
+        },
+        {
+            "text": "Vad heter världen som Majora's Mask utspelar sig i?",
+            "alternatives": [
+                { "text": "Ikana" },
+                { "text": "Hyrule" },
+                { "text": "Termina" },
+                { "text": "Koholint" }
+            ],
+            "answer": 3
         }
     ]
 }

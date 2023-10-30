@@ -1,0 +1,100 @@
+{
+    "questions": [
+        {
+            "text": "På vilken av de tre dagarna regnar det i Clock Town?",
+            "alternatives": [
+                { "text": "Den första dagen" },
+                { "text": "Den andra dagen" },
+                { "text": "Den sista dagen" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Liksom i Ocarina of Time har Link en fe-kompanjon med sig på äventyret. Vad heter hon?",
+            "alternatives": [
+                { "text": "Tatl" },
+                { "text": "Tael" },
+                { "text": "Ciela" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Vad heter världen som Majora's Mask utspelar sig i?",
+            "alternatives": [
+                { "text": "Ikana" },
+                { "text": "Hyrule" },
+                { "text": "Termina" },
+                { "text": "Koholint" }
+            ],
+            "answer": 3
+        },
+        {
+            "text": "Vem är den förlorade vännen som Link letar efter i början av spelet?",
+            "alternatives": [
+                { "text": "Zelda" },
+                { "text": "Navi" },
+                { "text": "Kaepora Gaebora" },
+                { "text": "Saria" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "En av sångerna Link kan spela på sin okarina skapar en slags kopia av Links förevarande form. Vad heter sången?",
+            "alternatives": [
+                { "text": "Oath to Order" },
+                { "text": "Requiem of Spirit" },
+                { "text": "Tune of Echoes" },
+                { "text": "Elegy of Emptiness" }
+            ],
+            "answer": 4
+        },
+        {
+            "text": "I Majora's Mask introduceras en fiende i form av en stor fågel som stjäl både rupier och saker av Link. Vad heter den?",
+            "alternatives": [
+                { "text": "Takkuri" },
+                { "text": "Guay" },
+                { "text": "Keeta" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Hur många tomma flaskor kan Link hitta under spelets gång?",
+            "alternatives": [
+                { "text": "3" },
+                { "text": "4" },
+                { "text": "5" },
+                { "text": "6" }
+            ],
+            "answer": 4
+        },
+        {
+            "text": "Vad heter gruppen som ska uppträda på Carnival of Time och som Link träffar på värdshuset?",
+            "alternatives": [
+                { "text": "Gorman Troupe" },
+                { "text": "Bremen Troupe" },
+                { "text": "Toto Troupe" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "“You've met with a terrible fate, haven't you?” Vem står för denna replik?",
+            "alternatives": [
+                { "text": "Skull Kid" },
+                { "text": "Happy Mask Salesman" },
+                { "text": "Kaepora Gaebora" },
+                { "text": "Tatl" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilken av följande masker kan Link INTE tillskansa sig i Majora's Mask?",
+            "alternatives": [
+                { "text": "Couple's Mask" },
+                { "text": "Mask of Truth" },
+                { "text": "Skull Mask" },
+                { "text": "Keaton Mask" }
+            ],
+            "answer": 3
+        }
+    ]
+}
