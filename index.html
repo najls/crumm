@@ -80,7 +80,6 @@
             margin: 0;
         }
 
-        #question.long { font-size: 1.75rem; }
         #alternatives {
             font-size: 1.5rem;
             list-style: none;
@@ -95,6 +94,8 @@
             text-align: center;
         }
 
+        #question.long { font-size: 1.75rem; }
+        #alternatives.long { font-size: 1.25rem; }
         #answer.revealed::before { content: "[ "; }
         #answer.revealed::after { content: " ]"; }
         .display-none { display: none; }
@@ -173,16 +174,23 @@
             if (question.text.length > 100) { qElem.classList.add('long'); }
             else { qElem.classList.remove('long'); }
 
-            let ul = document.getElementById('alternatives');
-            while (ul.firstChild) ul.removeChild(ul.firstChild);
+            let aLen = 0;
+            let aElem = document.getElementById('alternatives');
+            while (aElem.firstChild) aElem.removeChild(aElem.firstChild);
 
             for (let i = 0; i < question.alternatives.length; i++) {
                 let li = document.createElement('li');
+
                 let text = document.createTextNode(question.alternatives[i].text);
                 li.append(text);
+                aLen += text.length;
+
                 if (i + 1 == question.answer) li.setAttribute('id', 'answer');
-                ul.appendChild(li);
+                aElem.appendChild(li);
             }
+
+            if (aLen > 100) { aElem.classList.add('long') }
+            else { aElem.classList.remove('long') }
 
             document.getElementById('reveal').disabled = false;
         }
