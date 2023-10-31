@@ -131,7 +131,7 @@
                 { "text": "Stone Mask" },
                 { "text": "Keaton Mask" }
             ],
-            "answer": 0
+            "answer": 3
         },
         {
             "text": "Hur många masker kan Link samla på sig (exklusive Sun Mask och kvarlevorna från templens bossar)?",
@@ -141,7 +141,7 @@
                 { "text": "32" },
                 { "text": "40" }
             ],
-            "answer": 0
+            "answer": 2
         },
         {
             "text": "Om Link lyckas samla alla masker i spelet har han möjlighet att byta till sig en mask som förvandlar honom till en mäktig krigare. Vad heter masken?",
@@ -150,7 +150,7 @@
                 { "text": "Fierce Deity Mask" },
                 { "text": "Feral Idol Mask" }
             ],
-            "answer": 0
+            "answer": 2
         }
     ]
 }
