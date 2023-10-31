@@ -95,6 +95,62 @@
                 { "text": "Keaton Mask" }
             ],
             "answer": 3
+        },
+        {
+            "text": "Vad heter bossen i Woodfall Temple?",
+            "alternatives": [
+                { "text": "Odolwa" },
+                { "text": "Bongo Bongo" },
+                { "text": "Oganga" },
+                { "text": "Armogohma" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Från vem lär sig Link sången Sonata of Awakening?",
+            "alternatives": [
+                { "text": "En häxa" },
+                { "text": "En apa" },
+                { "text": "En Deku Scrub" }
+            ],
+            "answer": 2
+        },
+        {
+            "text": "Vilken funktion har Tingle i Majora's Mask?",
+            "alternatives": [
+                { "text": "Kartförsäljare" },
+                { "text": "Bönförsäljare" },
+                { "text": "Bank" }
+            ],
+            "answer": 1
+        },
+        {
+            "text": "Kafei är en karaktär som dyker upp tidigt i spelet. Han bär en mask. Vilken?",
+            "alternatives": [
+                { "text": "Don Gero's Mask" },
+                { "text": "Stone Mask" },
+                { "text": "Keaton Mask" }
+            ],
+            "answer": 0
+        },
+        {
+            "text": "Hur många masker kan Link samla på sig (exklusive Sun Mask och kvarlevorna från templens bossar)?",
+            "alternatives": [
+                { "text": "16" },
+                { "text": "24" },
+                { "text": "32" },
+                { "text": "40" }
+            ],
+            "answer": 0
+        },
+        {
+            "text": "Om Link lyckas samla alla masker i spelet har han möjlighet att byta till sig en mask som förvandlar honom till en mäktig krigare. Vad heter masken?",
+            "alternatives": [
+                { "text": "Fierce Divinity Mask" },
+                { "text": "Fierce Deity Mask" },
+                { "text": "Feral Idol Mask" }
+            ],
+            "answer": 0
         }
     ]
 }
