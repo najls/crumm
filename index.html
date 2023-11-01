@@ -209,7 +209,6 @@
 
             if (!localStorage.getItem(url)) {
                 localStorage.setItem(url, JSON.stringify({
-                    'size': json.questions.length, // number of questions
                     'draw': [...Array(json.questions.length).keys()] // draw card pile
                 }));
             }
@@ -220,7 +219,7 @@
         function getRandomQuestion(data, key) {
             let category = JSON.parse(localStorage.getItem(key));
 
-            if (!category.draw.length) category.draw = [...Array(category.size).keys()];
+            if (!category.draw.length) category.draw = [...Array(data.questions.length).keys()];
 
             let i = Math.floor(Math.random() * category.draw.length);
             let n = category.draw[i];
