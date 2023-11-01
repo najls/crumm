@@ -151,6 +151,15 @@
                 { "text": "Feral Idol Mask" }
             ],
             "answer": 2
+        },
+        {
+            "text": "Majora's Mask kan anta tre former. Vilken av följande är INTE en av dess former?",
+            "alternatives": [
+                { "text": "Majora's Incarnation" },
+                { "text": "Majora's Wrath" },
+                { "text": "Majora's Phantom" }
+            ],
+            "answer": 3
         }
     ]
 }
