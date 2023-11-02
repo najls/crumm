@@ -159,15 +159,18 @@
                 this.innerText = this.dataset.open;
             }
             else {
+                this.disabled = true;
                 html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback).then(() => {
                     if (html5QrCode.getState() === 2) {
                         this.innerText = this.dataset.close;
+                        this.disabled = false;
                         window.scrollTo(0, 0);
                     }
                 })
                 .catch((err) => {
                     console.log(err);
                     readerContainer.classList.add('display-none')
+                    this.disabled = false;
                 });
             }
         });
