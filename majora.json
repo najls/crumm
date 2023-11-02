@@ -1,4 +1,5 @@
 {
+    "title": "Majora's Mask",
     "questions": [
         {
             "text": "På vilken av de tre dagarna regnar det i Clock Town?",
@@ -203,8 +204,8 @@
             "text": "Hur spelas New Wave Bossa Nova?",
             "alternatives": [
                 { "text": "↓ A ↓ A → ↓ → ↓" },
+                { "text": "↑ → ↑ → ← ↑" },
                 { "text": "↑ ← ↑ ← A → A" },
-                { "text": "A ↓ ↑ A ↓ ↑" },
                 { "text": "← ↑ ← → ↓ ← →" }
             ],
             "answer": 4
