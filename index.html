@@ -74,6 +74,12 @@
             text-shadow: .125rem .125rem black;
         }
 
+        #title {
+            font-size: 1.125rem;
+            font-weight: normal;
+            margin: 0 0 .75rem;
+        }
+
         #card > div {
             display: flex;
             flex: 1;
@@ -110,6 +116,7 @@
     <main>
         <div class="display-none" id="reader"></div>
         <div id="card">
+            <h1 class="display-none" id="title"></h1>
             <div>
                 <p id="question">All right, everyone, let's mosey.</p>
                 <ul id="alternatives"></ul>
@@ -122,6 +129,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('clear')) {
             localStorage.clear();
+            window.history.replaceState(null, '', window.location.pathname);
             document.getElementById('question').innerText = 'Cleared local storage!';
         }
 
@@ -140,7 +148,7 @@
             catch (err) { console.log(err); }
             renderReadBtn.innerText = renderReadBtn.dataset.open;
             readerContainer.classList.add('display-none');
-            renderQuestion(decodedText);
+            loadQuestion(decodedText);
         };
 
         var readerContainer = document.getElementById('reader');
@@ -174,59 +182,73 @@
             .catch((err) => { console.log(err); });
         }
 
-        async function renderQuestion(url) {
-            let question = await loadQuestion(url);
-            let qElem = document.getElementById('question');
-            qElem.innerText = question.text;
+        async function loadQuestion(url) {
+            const response = await fetch(url);
+            const collData = await response.json();
 
-            if (question.text.length > 100) qElem.classList.add('long');
-            else qElem.classList.remove('long');
+            let storageData = JSON.parse(localStorage.getItem(url));
 
-            let aLen = 0;
-            let aElem = document.getElementById('alternatives');
-            while (aElem.firstChild) aElem.removeChild(aElem.firstChild);
+            if (!storageData) {
+                localStorage.setItem(url, JSON.stringify({
+                    'title': collData.title,
+                    'draw': [...Array(collData.questions.length).keys()] // draw card pile
+                }));
+
+                storageData = JSON.parse(localStorage.getItem(url));
+            }
+
+            let question = getRandomQuestion(collData, url, storageData);
+            renderQuestion(question, storageData.title);
+        }
+
+        async function renderQuestion(question, title) {
+            let titleElem = document.getElementById('title');
+
+            if (title) {
+                titleElem.innerText = title;
+                titleElem.classList.remove('display-none');
+            }
+            else { titleElem.classList.add('display-none'); }
+
+            let qnElem = document.getElementById('question');
+            qnElem.innerText = question.text;
+
+            if (question.text.length > 100) qnElem.classList.add('long');
+            else qnElem.classList.remove('long');
+
+            let ansLen = 0;
+            let ansElem = document.getElementById('alternatives');
+            while (ansElem.firstChild) ansElem.removeChild(ansElem.firstChild);
 
             for (let i = 0; i < question.alternatives.length; i++) {
                 let li = document.createElement('li');
 
                 let text = document.createTextNode(question.alternatives[i].text);
                 li.append(text);
-                aLen += text.length;
+                ansLen += text.length;
 
                 if (i + 1 == question.answer) li.setAttribute('id', 'answer');
-                aElem.appendChild(li);
+                ansElem.appendChild(li);
             }
 
-            if (aLen > 100) aElem.classList.add('long');
-            else aElem.classList.remove('long');
+            if (ansLen > 100) ansElem.classList.add('long');
+            else ansElem.classList.remove('long');
 
             document.getElementById('reveal').disabled = false;
         }
 
-        async function loadQuestion(url) {
-            const response = await fetch(url);
-            const json = await response.json();
-
-            if (!localStorage.getItem(url)) {
-                localStorage.setItem(url, JSON.stringify({
-                    'draw': [...Array(json.questions.length).keys()] // draw card pile
-                }));
+        function getRandomQuestion(collData, key, storageData) {
+            if (!storageData.draw.length) {
+                storageData.title = collData.title;
+                storageData.draw = [...Array(collData.questions.length).keys()];
             }
 
-            return getRandomQuestion(json, url);
-        }
+            let i = Math.floor(Math.random() * storageData.draw.length);
+            let n = storageData.draw[i];
 
-        function getRandomQuestion(data, key) {
-            let category = JSON.parse(localStorage.getItem(key));
-
-            if (!category.draw.length) category.draw = [...Array(data.questions.length).keys()];
-
-            let i = Math.floor(Math.random() * category.draw.length);
-            let n = category.draw[i];
-
-            category.draw.splice(i, 1);
-            localStorage.setItem(key, JSON.stringify(category));
-            return data.questions[n];
+            storageData.draw.splice(i, 1);
+            localStorage.setItem(key, JSON.stringify(storageData));
+            return collData.questions[n];
         }
     </script>
 </body>
