@@ -144,7 +144,7 @@
 
         const html5QrCode = new Html5Qrcode("reader");
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-            try { stopCamera(); }
+            try { stopCamera(renderReadBtn); }
             catch (err) { console.log(err); }
             renderReadBtn.innerText = renderReadBtn.dataset.open;
             readerContainer.classList.add('display-none');
@@ -154,12 +154,13 @@
         var readerContainer = document.getElementById('reader');
         renderReadBtn.addEventListener('click', async function() {
             if (readerContainer.classList.toggle('display-none')) {
-                try { stopCamera(); }
+                try { stopCamera(this); }
                 catch (err) { console.log(err); }
                 this.innerText = this.dataset.open;
             }
             else {
                 this.disabled = true;
+
                 html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback).then(() => {
                     if (html5QrCode.getState() === 2) {
                         this.innerText = this.dataset.close;
@@ -180,9 +181,17 @@
             this.disabled = true;
         });
 
-        function stopCamera() {
-            html5QrCode.stop().then(() => { html5QrCode.clear(); })
-            .catch((err) => { console.log(err); });
+        function stopCamera(btn) {
+            btn.disabled = true;
+
+            html5QrCode.stop().then(() => {
+                html5QrCode.clear();
+                btn.disabled = false;
+            })
+            .catch((err) => {
+                console.log(err);
+                btn.disabled = false;
+            });
         }
 
         async function loadQuestion(url) {
