@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Om Card Randomizer Utility for Midgar Madness</title>
+
+    <style>body { max-width: 71vh; } img { max-width: 100% }</style>
+</head>
+<body>
+    <header>
+        <h1>Card Randomizer Utility for Midgar Madness</h1>
+        <p>2023-11-04</p>
+    </header>
+    <main>
+        <section>
+            <h2>Vad är det?</h2>
+            <p>Card Randomizer Utility for Midgar Madness (CRUMM) är ett webbaserat verktyg skapat för actionäventyrsfrågespelet Midgar Madness. CRUMM används för att läsa in och slumpmässigt välja ut allmänbildande frågor med tillhörande svarsalternativ.</p>
+            <p>CRUMM finns här: <a href="https://najls.github.io/crumm/" target="_blank">najls.github.io/crumm/</a></p>
+        </section>
+        <section>
+            <h2>Hur fungerar det?</h2>
+            <p>CRUMM används med fördel på mobilen då tillgång till kamera är en förutsättning. Kameran används för att läsa QR-koder som innehåller URL:er till filer med samlingar av frågor och svarsalternativ. När en QR-kod läses slumpar CRUMM fram en av frågorna och visar upp den som ett kort tillsammans med svarsalternativen. CRUMM håller reda på vilka frågor som visats och kan hantera flera filer parallellt.</p>
+        </section>
+        <section>
+            <h2>Minne</h2>
+            <p>CRUMM använder browserns local storage för att minnas vilka frågor som har visats. För att tömma local storage och börja på en ny slumpad omgång, ange query-parametern <i>clear</i>.</p>
+            <p>Såhär: <a href="https://najls.github.io/crumm/?clear" target="_blank">najls.github.io/crumm/?clear</a></p>
+        </section>
+        <section>
+            <h2>Gör egna frågor!</h2>
+            <p>Att hitta på egna frågor är roligt och att skapa en fil för dessa är inte svårt! Det enda du behöver är en texteditor av något slag. Typ vad som helst funkar, men t.ex. <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> kommer göra upplevelsen angenämare.</p>
+            <section>
+                <h3>Skriva frågefiler</h3>
+                <p>Frågefilerna skrivs på formatet JSON, som du kan läsa allt om på <a href="https://www.json.org/json-en.html" target="_blank">json.org</a>, men för att spara tid kan du kopiera mallen nedan och skriva direkt i den.</p>
+                <pre>
+                    <code>
+{
+    "title": "",
+    "questions": [
+        {
+            "text": "",
+            "alternatives": [
+                { "text": "" },
+                { "text": "" },
+                { "text": "" }
+            ],
+            "answer": 0
+        },
+        {
+            "text": "",
+            "alternatives": [
+                { "text": "" },
+                { "text": "" },
+                { "text": "" }
+            ],
+            "answer": 0
+        }
+    ]
+}
+                    </code>
+                </pre>
+                <p>I JSON förekommer två typer av struktur: objekt och listor. Ett objekt omges av <code>{ }</code> medan en lista omges av <code>[ ]</code>. I mallen syns en massa <code>""</code>. Dessa är tomma textsträngar och det är, inte helt oväntat, mellan citationstecknen som text fylls i.</p>
+                <p>Förhoppningsvis är strukturen relativt självförklarande. Det finns inget (teoretiskt) minimum eller maximum varken för antalet frågor eller antalet svarsalternativ per fråga. För att skapa nya frågor är det enklast att bara kopiera objekt i <code>questions</code>-listan. Motsvarande gäller för svarsalternativen i listorna <code>alternatives</code>.</p>
+                <p>Värdena <code>answer</code> ska vara siffervärden och är i mallen satta till 0, men ska förstås motsvara det rätta svarsalternativet, dvs. minst 1. Värdet <code>title</code> som ligger överst är valfritt, men om ett sådant finns kommer CRUMM att visa upp det som en rubrik på frågekortet, vilket är användbart om frågorna hör till en namngiven kategori.</p>
+                <p>Frågefilerna sparas med filändelsen .json</p>
+                <section>
+                    <h4>Några saker att tänka på</h4>
+                    <ul>
+                        <li>Det går inte att använda <code>"</code> i textsträngarna då detta i JSON kommer att tolkas som att strängvärdet är avslutat, vilket leder till syntaxfel. Behöver du citationstecken i dina frågor eller svarsalternativ, använd <code>'</code> eller <code>“</code> och <code>”</code></li>
+                        <li>Var noga med att separera fråge- och svarsobjekten med komma. Om ett kommatecken saknas eller förekommer på fel plats (t.ex. efter det sista objektet i en lista) kommer syntaxfel att uppstå.</li>
+                        <li>Om du är osäker på din syntax kan du enkelt kolla att den stämmer med en JSON-validator, t.ex. på <a href="https://jsonlint.com/" target="_blank">jsonlint.com</a>. I regel kommer dock din texteditor att hjälpa till med detta.</li>
+                        <li>Ha kul!</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h3>Hosta frågefiler</h3>
+                <p>För att CRUMM ska kunna läsa frågefilerna behöver dom vara tillgängliga på internet via en URL. Om du som många andra inte har en egen webbserver hemma måste du använda dig av någon typ av tjänst. För just det här ändamålet rekommenderas GitHub Pages. Det är relativt enkelt att komma igång med och kostar ingenting!</p>
+                <section>
+                    <h4>Sätta upp ett repo för GitHub Pages</h4>
+                    <p>Skapa ett konto på <a href="https://github.com/" target="_blank">github.com</a>. Därefter skapar du ett repository (repo) som du döper till något rimligt. Det viktiga här är att du väljer att göra ditt repo publikt tillgängligt.</p>
+                    <img src="create-repo.png" alt="">
+                    <p>När du klickat på <i>Create repository</i> hamnar du på startsidan för ditt nya repo. Om du har noll Git-vana så väljer du att ladda upp en existerande fil i den blå rutan som heter <i>Quick setup</i>. Länken finns i den lilla texten på nedersta raden i rutan. Om du inte ser <i>Quick setup</i> borde du istället se en meny som heter <i>Add file</i> till höger i överkant.</p>
+                    <img src="upload-file.png" alt="">
+                    <p>Filuppladdningen är hyfsat självförklarande. Du kan välja en eller flera filer och när du är nöjd klickar du på <i>Commit changes</i>.</p>
+                    <p>När du har dina frågefiler på plats är det dags att aktivera GitHub Pages för ditt repo. Gå till <i>Settings</i> och välj <i>Pages</i> i sidomenyn. Under <i>Branch</i> väljer du <i>main</i> och klickar sedan på Save.</p>
+                    <img src="github-pages.png" alt="">
+                    <p>Klart! Efter någon minut eller två kan du se din fil på adressen <u>dittanvändarnamn.github.io/reponamn/filnamn.json</u></p>
+                </section>
+            </section>
+            <section>
+                <h3>Skapa QR-kod för frågefiler</h3>
+                <p>Frågefiler görs som tidigare nämnt tillgängliga via QR-koder. För att göra det enkelt att läsa av koderna är det bäst om dom finns utskrivna på någon typ av kort</p>
+                <p>För att skapa själva koden från din URL finns det en massa webbaserade verktyg, t.ex. på <a href="https://qrcode-monkey.com/" target="_blank">qrcode-monkey.com</a>. Spara ner bildfilen och skriv ut!</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
