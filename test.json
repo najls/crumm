@@ -51,6 +51,23 @@
                 { "text": "Wrong 8" }
             ],
             "answer": 5
+        },
+        {
+            "text": "Empty alts objects + answer 0",
+            "alternatives": [
+                { "text": "" },
+                { "text": "" },
+                { "text": "" }
+            ],
+            "answer": 0
+        },
+        {
+            "text": "Emtpy alternatives + answer 1",
+            "alternatives": [],
+            "answer": 1
+        },
+        {
+            "text": "No alternatives + no answer"
         }
     ]
 }
