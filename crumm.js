@@ -7,6 +7,16 @@ if (urlParams.has('clear')) {
 
 var renderReadBtn = document.getElementById('renderReader');
 
+if (!window.localStorage.getItem('consent')) {
+    renderReadBtn.disabled = true;
+    document.getElementById('consent').addEventListener('click', function() {
+        window.localStorage.setItem('consent', 'true');
+        document.getElementById('notice').classList.add('display-none');
+        renderReadBtn.disabled = false;
+    });
+}
+else document.getElementById('notice').classList.add('display-none');
+
 const config = {
     fps: 10,
     qrbox: { width: 250, height: 250 },

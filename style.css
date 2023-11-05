@@ -30,8 +30,6 @@ main {
 }
 
 button {
-    background-color: lightpink;
-    background-image: linear-gradient(to bottom, lightpink, rgb(255, 212, 223), lightpink);
     border: .25rem solid gray;
     border-radius: .5rem;
     border-style: ridge;
@@ -43,23 +41,46 @@ button {
     text-transform: uppercase;
 }
 
+button.red {
+    background-color: lightpink;
+    background-image: linear-gradient(to bottom, lightpink, rgb(255, 212, 223), lightpink);
+}
+
+button.green {
+    background-color: rgb(162, 218, 106);
+    background-image: linear-gradient(to bottom, rgb(162, 218, 106), rgb(238, 251, 224), rgb(162, 218, 106));
+}
+
 button:disabled {
     background-color: gray;
     background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
 }
 
-#renderReader { margin-top: var(--gap); }
-#card {
-    background-color: #000123;
-    background-image: linear-gradient(to bottom right, rgb(1, 0, 175), rgb(0, 1, 35));
+#consent, #renderReader { margin-top: var(--gap); }
+
+#notice, #card {
     border: .25rem solid white;
     border-radius: 1rem;
     border-style: ridge;
     display: flex;
-    flex: 1;
     flex-direction: column;
     padding: var(--gap);
     text-shadow: .125rem .125rem black;
+}
+
+#notice {
+    background-color: rgb(111, 17, 155);
+    background-image: linear-gradient(to bottom right, rgb(118, 11, 72), rgb(111, 17, 155));
+    position: absolute;
+    top: calc(var(--gap) * .25);
+    right: calc(var(--gap) * .25);
+    left: calc(var(--gap) * 2);
+}
+
+#card {
+    background-color: rgb(0, 1, 35);
+    background-image: linear-gradient(to bottom right, rgb(1, 0, 175), rgb(0, 1, 35));
+    flex: 1;
 }
 
 #title {
@@ -68,13 +89,13 @@ button:disabled {
     margin: 0 0 .75rem;
 }
 
-#card > div {
+#content {
     display: flex;
     flex: 1;
     flex-direction: column;
 }
 
-#question {
+#notice p, #question {
     font-size: 2rem;
     margin: 0;
 }
@@ -97,4 +118,4 @@ button:disabled {
 #alternatives.long { font-size: 1.25rem; }
 #answer.revealed::before { content: "[ "; }
 #answer.revealed::after { content: " ]"; }
-.display-none { display: none; }
+.display-none { display: none !important; }

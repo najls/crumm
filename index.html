@@ -15,14 +15,18 @@
     <main>
         <div class="display-none" id="reader"></div>
         <div id="card">
+            <div id="notice">
+                <p>This website saves game data to your local storage. By continuing to use this website, you consent to data being stored on your device.</p>
+                <button class="red" id="consent" type="button">OK</button>
+            </div>
             <h1 class="display-none" id="title"></h1>
-            <div>
+            <div id="content">
                 <p id="question">All right, everyone, let's mosey.</p>
                 <ul id="alternatives"></ul>
             </div>
-            <button id="reveal" disabled>Reveal answer</button>
+            <button class="red" id="reveal" type="button" disabled>Reveal answer</button>
         </div>
-        <button id="renderReader" data-open="Read new card" data-close="Close reader">Read new card</button>
+        <button class="green" id="renderReader" type="button" data-open="Read new card" data-close="Close reader">Read new card</button>
     </main>
     <script src="crumm.js"></script>
 </body>
