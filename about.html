@@ -38,10 +38,12 @@
                     <code>
 {
     "title": "",
-    "questions": [
+    "questions":
+    [
         {
             "text": "",
-            "alternatives": [
+            "alternatives":
+            [
                 { "text": "" },
                 { "text": "" },
                 { "text": "" }
@@ -50,7 +52,18 @@
         },
         {
             "text": "",
-            "alternatives": [
+            "alternatives":
+            [
+                { "text": "" },
+                { "text": "" },
+                { "text": "" }
+            ],
+            "answer": 0
+        },
+        {
+            "text": "",
+            "alternatives":
+            [
                 { "text": "" },
                 { "text": "" },
                 { "text": "" }
@@ -61,7 +74,7 @@
 }
                     </code>
                 </pre>
-                <p>I JSON förekommer två typer av struktur: objekt och listor. Ett objekt omges av <code>{ }</code> medan en lista omges av <code>[ ]</code>. I mallen syns en massa <code>""</code>. Dessa är tomma textsträngar och det är, inte helt oväntat, mellan citationstecknen som text fylls i.</p>
+                <p>I JSON förekommer två typer av struktur: objekt och listor. Ett objekt omges av <code>{ }</code> medan en lista omges av <code>[ ]</code>. I mallen syns en massa <code>""</code>. Dessa är tomma textsträngar och det är, inte helt oväntat, mellan citationstecknen som text fylls i. Textsträngarna <code>"title"</code>, <code>"questions"</code>, <code>"alternatives"</code> och <code>"answer"</code> fungerar som nycklar och får inte ändras.</p>
                 <p>Förhoppningsvis är strukturen relativt självförklarande. Det finns inget (teoretiskt) minimum eller maximum varken för antalet frågor eller antalet svarsalternativ per fråga. För att skapa nya frågor är det enklast att bara kopiera objekt i <code>questions</code>-listan. Motsvarande gäller för svarsalternativen i listorna <code>alternatives</code>.</p>
                 <p>Värdena <code>answer</code> ska vara siffervärden och är i mallen satta till 0, men ska förstås motsvara det rätta svarsalternativet, dvs. minst 1. Värdet <code>title</code> som ligger överst är valfritt, men om ett sådant finns kommer CRUMM att visa upp det som en rubrik på frågekortet, vilket är användbart om frågorna hör till en namngiven kategori.</p>
                 <p>Frågefilerna sparas med filändelsen .json</p>
