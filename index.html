@@ -15,22 +15,35 @@
     <main>
         <div class="display-none" id="reader"></div>
         <div id="card">
-            <div id="notice">
+            <div id="notice" data-warning="This action will erase all game data. Continue?">
                 <p>This website saves game data to your local storage. By continuing to use this website, you consent to data being stored on your device.</p>
-                <button class="red" id="consent" type="button">OK</button>
+                <div class="button-group">
+                    <button class="red" id="consent" type="button">OK</button>
+                    <button class="yellow display-none" id="cancel" type="button">Cancel</button>
+                </div>
             </div>
             <h1 class="display-none" id="title"></h1>
             <div id="content">
                 <p id="question">All right, everyone, let's mosey.</p>
                 <ul id="alternatives"></ul>
             </div>
-            <button class="red" id="reveal" type="button" aria-label="Reveal answer" disabled>
+        </div>
+        <div class="button-group">
+            <button class="red" id="reset" type="button" aria-label="Reveal answer">
+                <img src="fontawesome/rotate-right-solid.svg" alt="">
+            </button>
+            <button class="yellow" id="order" type="button" aria-label="Reveal answer">
+                <img src="fontawesome/shuffle-solid.svg" alt="">
+            </button>
+            <button class="yellow" id="reveal" type="button" aria-label="Reveal answer" disabled>
                 <img src="fontawesome/eye-solid.svg" alt="">
             </button>
         </div>
-        <button class="green" id="renderReader" type="button" aria-label="Read new card" data-open="Read new card" data-close="Close reader">
-            <img src="fontawesome/camera-solid.svg" alt="">
-        </button>
+        <div class="button-group">
+            <button class="green" id="renderReader" type="button" aria-label="Read new card" data-open="Read new card" data-close="Close reader">
+                <img src="fontawesome/camera-solid.svg" alt="">
+            </button>
+        </div>
     </main>
     <script src="crumm.js"></script>
 </body>

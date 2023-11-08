@@ -5,15 +5,21 @@ if (urlParams.has('clear')) {
     document.getElementById('question').innerText = 'Cleared local storage!';
 }
 
+var resetBtn = document.getElementById('reset');
+var orderBtn = document.getElementById('order');
+var revealBtn = document.getElementById('reveal');
 var renderReadBtn = document.getElementById('renderReader');
 
+var revealBtnDisabled = true;
+
 if (!window.localStorage.getItem('consent')) {
-    renderReadBtn.disabled = true;
+    disableUi();
+
     document.getElementById('consent').addEventListener('click', function() {
         window.localStorage.setItem('consent', 'true');
         document.getElementById('notice').classList.add('display-none');
-        renderReadBtn.disabled = false;
-    });
+        enableUi();
+    }, {once: true });
 }
 else document.getElementById('notice').classList.add('display-none');
 
@@ -58,7 +64,37 @@ renderReadBtn.addEventListener('click', async function() {
     }
 });
 
-document.getElementById('reveal').addEventListener('click', function() {
+resetBtn.addEventListener('click', function() {
+    disableUi();
+
+    let noticeElem = document.getElementById('notice');
+    let okBtn = document.getElementById('consent');
+    let cancelBtn = document.getElementById('cancel');
+
+    cancelBtn.addEventListener('click', function() {
+        noticeElem.classList.add('display-none');
+        enableUi();
+    });
+
+    okBtn.addEventListener('click', function() {
+        clearGameData();
+        noticeElem.classList.add('display-none');
+
+        document.getElementById('question').innerText = "Erased game data!";
+
+        let ansElem = document.getElementById('alternatives');
+        while (ansElem.firstChild) ansElem.removeChild(ansElem.firstChild);
+
+        revealBtnDisabled = true;
+        enableUi();
+    });
+
+    cancelBtn.classList.remove('display-none');
+    noticeElem.children[0].innerText = noticeElem.dataset.warning;
+    noticeElem.classList.remove('display-none');
+});
+
+revealBtn.addEventListener('click', function() {
     document.getElementById('answer').classList.add('revealed');
     this.disabled = true;
 });
@@ -127,7 +163,7 @@ async function renderQuestion(question, title) {
     if (ansLen > 100) ansElem.classList.add('long');
     else ansElem.classList.remove('long');
 
-    document.getElementById('reveal').disabled = false;
+    revealBtn.disabled = false;
 }
 
 function getRandomQuestion(collData, key, storageData) {
@@ -139,4 +175,36 @@ function getRandomQuestion(collData, key, storageData) {
     storageData.draw.splice(i, 1);
     localStorage.setItem(key, JSON.stringify(storageData));
     return collData.questions[n];
+}
+
+function disableUi() {
+    revealBtnDisabled = revealBtn.disabled;
+
+    resetBtn.disabled = true;
+    orderBtn.disabled = true;
+    revealBtn.disabled = true;
+    renderReadBtn.disabled = true;
+}
+
+function enableUi() {
+    revealBtn.disabled = revealBtnDisabled;
+
+    resetBtn.disabled = false;
+    orderBtn.disabled = false;
+    renderReadBtn.disabled = false;
+}
+
+function clearGameData() {
+    // https://stackoverflow.com/a/24552599
+    var arr = [];
+
+    for (let i = 0; i < localStorage.length; i++){
+        if (localStorage.key(i).substring(0, 4) === 'http') {
+            arr.push(localStorage.key(i));
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        localStorage.removeItem(arr[i]);
+    }
 }

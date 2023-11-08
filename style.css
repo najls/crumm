@@ -36,6 +36,7 @@ button {
     border-radius: .5rem;
     border-style: ridge;
     color: black;
+    flex: 1;
     font-size: 1.5rem;
     font-family: var(--chakra);
     font-weight: 700;
@@ -48,6 +49,11 @@ button.red {
     background-image: linear-gradient(to bottom, lightpink, rgb(255, 212, 223), lightpink);
 }
 
+button.yellow {
+    background-color: rgb(255, 236, 182);
+    background-image: linear-gradient(to bottom, rgb(255, 236, 182), rgb(255, 245, 212), rgb(255, 236, 182));
+}
+
 button.green {
     background-color: rgb(162, 218, 106);
     background-image: linear-gradient(to bottom, rgb(162, 218, 106), rgb(238, 251, 224), rgb(162, 218, 106));
@@ -58,8 +64,6 @@ button:disabled {
     background-image: linear-gradient(to bottom, gray, rgb(158, 158, 158), gray);
 }
 
-#consent, #renderReader { margin-top: var(--gap); }
-
 button img {
     display: inline-block;
     vertical-align: middle;
@@ -68,6 +72,13 @@ button img {
 }
 
 button:disabled img { filter: var(--filter-btn-disabled); }
+#reveal { flex: 3; }
+
+.button-group {
+    column-gap: var(--gap);
+    display: flex;
+    margin-top: var(--gap);
+}
 
 #notice, #card {
     border: .25rem solid white;
