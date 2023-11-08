@@ -10,6 +10,7 @@ var orderBtn = document.getElementById('order');
 var revealBtn = document.getElementById('reveal');
 var renderReadBtn = document.getElementById('renderReader');
 
+var questionOrder = -1; // -1, 0 and 1 for random, ascending and descending respectively
 var revealBtnDisabled = true;
 
 if (!window.localStorage.getItem('consent')) {
@@ -94,6 +95,17 @@ resetBtn.addEventListener('click', function() {
     noticeElem.classList.remove('display-none');
 });
 
+orderBtn.addEventListener('click', function() {
+    let keys = ['ascn', 'desc', 'rand'];
+
+    this.children[questionOrder + 1].classList.add('display-none');
+
+    questionOrder = questionOrder > 0 ? -1 : questionOrder + 1;
+
+    this.setAttribute('aria-label', this.dataset[keys[questionOrder + 1]]);
+    this.children[questionOrder + 1].classList.remove('display-none');
+});
+
 revealBtn.addEventListener('click', function() {
     document.getElementById('answer').classList.add('revealed');
     this.disabled = true;
@@ -126,7 +138,7 @@ async function loadQuestion(url) {
         storageData = JSON.parse(localStorage.getItem(url));
     }
 
-    let question = getRandomQuestion(collData, url, storageData);
+    let question = getQuestion(collData, url, storageData);
     renderQuestion(question, collData.title);
 }
 
@@ -166,10 +178,15 @@ async function renderQuestion(question, title) {
     revealBtn.disabled = false;
 }
 
-function getRandomQuestion(collData, key, storageData) {
+function getQuestion(collData, key, storageData) {
     if (!storageData.draw.length) storageData.draw = [...Array(collData.questions.length).keys()];
 
-    let i = Math.floor(Math.random() * storageData.draw.length);
+    let i = questionOrder < 0 ?
+        Math.floor(Math.random() * storageData.draw.length) :
+        questionOrder > 0 ?
+            storageData.draw.length - 1 :
+            0;
+
     let n = storageData.draw[i];
 
     storageData.draw.splice(i, 1);
