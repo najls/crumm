@@ -79,12 +79,14 @@ resetBtn.addEventListener('click', function() {
 
     okBtn.addEventListener('click', function() {
         clearGameData();
-        noticeElem.classList.add('display-none');
 
-        document.getElementById('question').innerText = "Erased game data!";
+        noticeElem.classList.add('display-none');
+        document.getElementById('title').classList.add('display-none');
 
         let ansElem = document.getElementById('alternatives');
         while (ansElem.firstChild) ansElem.removeChild(ansElem.firstChild);
+
+        document.getElementById('question').innerText = "Erased game data!";
 
         revealBtnDisabled = true;
         enableUi();
