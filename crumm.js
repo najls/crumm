@@ -28,7 +28,7 @@ const html5QrCode = new Html5Qrcode("reader");
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
     try { stopCamera(renderReadBtn); }
     catch (err) { console.log(err); }
-    renderReadBtn.innerText = renderReadBtn.dataset.open;
+    renderReadBtn.setAttribute('aria-label', renderReadBtn.dataset.open);
     readerContainer.classList.add('display-none');
     loadQuestion(decodedText);
 };
@@ -38,14 +38,14 @@ renderReadBtn.addEventListener('click', async function() {
     if (readerContainer.classList.toggle('display-none')) {
         try { stopCamera(this); }
         catch (err) { console.log(err); }
-        this.innerText = this.dataset.open;
+        renderReadBtn.setAttribute('aria-label', renderReadBtn.dataset.open);
     }
     else {
         this.disabled = true;
 
         html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback).then(() => {
             if (html5QrCode.getState() === 2) {
-                this.innerText = this.dataset.close;
+                renderReadBtn.setAttribute('aria-label', renderReadBtn.dataset.close);
                 this.disabled = false;
                 window.scrollTo(0, 0);
             }

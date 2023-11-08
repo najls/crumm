@@ -24,9 +24,13 @@
                 <p id="question">All right, everyone, let's mosey.</p>
                 <ul id="alternatives"></ul>
             </div>
-            <button class="red" id="reveal" type="button" disabled>Reveal answer</button>
+            <button class="red" id="reveal" type="button" aria-label="Reveal answer" disabled>
+                <img src="fontawesome/eye-solid.svg" alt="">
+            </button>
         </div>
-        <button class="green" id="renderReader" type="button" data-open="Read new card" data-close="Close reader">Read new card</button>
+        <button class="green" id="renderReader" type="button" aria-label="Read new card" data-open="Read new card" data-close="Close reader">
+            <img src="fontawesome/camera-solid.svg" alt="">
+        </button>
     </main>
     <script src="crumm.js"></script>
 </body>
