@@ -5,6 +5,10 @@ if (urlParams.has('clear')) {
     document.getElementById('question').innerText = 'Cleared local storage!';
 }
 
+// hide toolbar in safari
+window.scrollTo(0, document.body.scrollHeight);
+document.getElementById('toolbarFix').remove();
+
 var resetBtn = document.getElementById('reset');
 var orderBtn = document.getElementById('order');
 var revealBtn = document.getElementById('reveal');

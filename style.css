@@ -140,4 +140,5 @@ button:disabled img { filter: var(--filter-btn-disabled); }
 #alternatives.long { font-size: 1.25rem; }
 #answer.revealed::before { content: "[ "; }
 #answer.revealed::after { content: " ]"; }
+#toolbarFix { height: 100vh; }
 .display-none { display: none !important; }
