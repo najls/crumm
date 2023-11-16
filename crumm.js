@@ -6,7 +6,13 @@ if (urlParams.has('clear')) {
 }
 
 // hide toolbar in safari
-window.scrollTo(0, document.body.scrollHeight);
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
 document.getElementById('toolbarFix').remove();
 
 var resetBtn = document.getElementById('reset');
